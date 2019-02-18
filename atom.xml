@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xiaoliang&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-02-18T04:40:49.871Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Xiaoliang Wu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么我需要博客</title>
+    <link href="http://yoursite.com/2019/02/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E9%9C%80%E8%A6%81%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2019/02/17/为什么我需要博客/</id>
+    <published>2019-02-18T04:38:14.000Z</published>
+    <updated>2019-02-18T04:40:49.871Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="中文 Blog" scheme="http://yoursite.com/tags/%E4%B8%AD%E6%96%87-Blog/"/>
+    
+  </entry>
+  
+</feed>
