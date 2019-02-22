@@ -5,18 +5,18 @@
   
   <title>Tutorial for Hexo+Github=Blog | Xiaoliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Create repository Follow instructions in github to create a new repository   Install npm   Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and initia">
+  <meta name="description" content="Create repository  Follow instructions in github to create a new repository   Install npm    Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and init">
 <meta name="keywords" content="Tutorial English Hexo Github Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tutorial for Hexo+Github=Blog">
 <meta property="og:url" content="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/index.html">
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
-<meta property="og:description" content="Create repository Follow instructions in github to create a new repository   Install npm   Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and initia">
+<meta property="og:description" content="Create repository  Follow instructions in github to create a new repository   Install npm    Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and init">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-22T05:03:31.566Z">
+<meta property="og:updated_time" content="2019-02-22T05:05:43.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tutorial for Hexo+Github=Blog">
-<meta name="twitter:description" content="Create repository Follow instructions in github to create a new repository   Install npm   Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and initia">
+<meta name="twitter:description" content="Create repository  Follow instructions in github to create a new repository   Install npm    Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and init">
   
     <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
   
@@ -94,11 +94,13 @@
         <!-- Table of Contents -->
         
         <ol>
-<li>Create repository<blockquote>
+<li><p>Create repository</p>
+<blockquote>
 <p>Follow instructions in <a href="https://pages.github.com/" target="_blank" rel="noopener">github</a> to create a new repository</p>
 </blockquote>
 </li>
-<li>Install <code>npm</code></li>
+<li><p>Install <code>npm</code></p>
+</li>
 </ol>
 <blockquote>
 <p>Follow instructions in <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm" target="_blank" rel="noopener">npmjs</a> </p>
@@ -132,8 +134,8 @@
 <blockquote>
 <p>$ vim __config.yml</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:USERNAME/USERNAME.github.io.git</span><br></pre></td></tr></table></figure>
-<ol start="8">
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy: </span><br><span class="line">	 type: git</span><br><span class="line">	 repo: git@github.com:USERNAME/USERNAME.github.io.git</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="8">
 <li>Install <code>hexo-deployer-git</code></li>
 </ol>
 <blockquote>
@@ -154,20 +156,20 @@
 <p>$ npm install hexo-generator-feed –save</p>
 <p>$ vim __config.yml</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br><span class="line">  hub:</span><br><span class="line">  content:</span><br><span class="line">  content_limit: 140</span><br><span class="line">  content_limit_delim: &apos; &apos;</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
-<ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br><span class="line">  hub:</span><br><span class="line">  content:</span><br><span class="line">  content_limit: 140</span><br><span class="line">  content_limit_delim: &apos; &apos;</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
 <li>Change Theme</li>
 </ul>
 <blockquote>
 <p>$ git clone THEME_URL themes/THEME_NAME</p>
 <p>$ vim __config.yml</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">	theme: THEME_NAME</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">    theme: THEME_NAME</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="cjsflbg030002xly0o5drlm4e" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="cjsfle69g0000z8y0bqkgctu4" class="article-share-link">Share</a>
       
       
       
