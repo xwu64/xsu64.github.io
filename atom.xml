@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-02-28T16:52:19.367Z</updated>
+  <updated>2019-02-28T16:53:40.576Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/"/>
     <id>http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/</id>
     <published>2019-02-28T03:14:57.000Z</published>
-    <updated>2019-02-28T16:52:19.367Z</updated>
+    <updated>2019-02-28T16:53:40.576Z</updated>
     
     <summary type="html">
     
@@ -37,7 +37,9 @@
     </summary>
     
     
-      <category term="Golang; English" scheme="http://xwu64.github.io/tags/Golang-English/"/>
+      <category term="Golang" scheme="http://xwu64.github.io/tags/Golang/"/>
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
   </entry>
   
