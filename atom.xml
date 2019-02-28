@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-02-22T05:09:02.074Z</updated>
+  <updated>2019-02-28T16:49:35.772Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Understanding Golang sleep() function</title>
+    <link href="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/"/>
+    <id>http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/</id>
+    <published>2019-02-28T03:14:57.000Z</published>
+    <updated>2019-02-28T16:49:35.772Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;When we write a simple Golang program &lt;code&gt;test&lt;/code&gt;, like&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Golang English" scheme="http://xwu64.github.io/tags/Golang-English/"/>
+    
+  </entry>
   
   <entry>
     <title>Tutorial for Hexo+Github=Blog</title>
