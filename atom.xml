@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-02-28T16:53:40.576Z</updated>
+  <updated>2019-02-28T16:54:14.612Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/"/>
     <id>http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/</id>
     <published>2019-02-28T03:14:57.000Z</published>
-    <updated>2019-02-28T16:53:40.576Z</updated>
+    <updated>2019-02-28T16:54:14.612Z</updated>
     
     <summary type="html">
     
@@ -37,9 +37,9 @@
     </summary>
     
     
-      <category term="Golang" scheme="http://xwu64.github.io/tags/Golang/"/>
-    
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Golang" scheme="http://xwu64.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -48,7 +48,7 @@
     <link href="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/"/>
     <id>http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/</id>
     <published>2019-02-20T04:08:10.000Z</published>
-    <updated>2019-02-22T05:09:02.074Z</updated>
+    <updated>2019-02-28T16:55:28.661Z</updated>
     
     <summary type="html">
     
@@ -66,7 +66,15 @@
     </summary>
     
     
-      <category term="Tutorial English Hexo Github Blog" scheme="http://xwu64.github.io/tags/Tutorial-English-Hexo-Github-Blog/"/>
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
+    
+      <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
+    
+      <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
     
   </entry>
   
@@ -75,7 +83,7 @@
     <link href="http://xwu64.github.io/2019/02/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E9%9C%80%E8%A6%81%E5%8D%9A%E5%AE%A2/"/>
     <id>http://xwu64.github.io/2019/02/17/为什么我需要博客/</id>
     <published>2019-02-18T04:38:14.000Z</published>
-    <updated>2019-02-20T03:59:21.594Z</updated>
+    <updated>2019-02-28T16:56:02.328Z</updated>
     
     <summary type="html">
     
@@ -90,7 +98,9 @@
     </summary>
     
     
-      <category term="中文 Blog" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87-Blog/"/>
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
