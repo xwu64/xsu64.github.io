@@ -96,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/03/20/字典为什么没有开源项目？/" data-id="cjtuite4300069txp6hyfafj3" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/03/20/字典为什么没有开源项目？/" data-id="cjtuiwyfb0006buxp9df5z1ru" class="article-share-link">Share</a>
       
       
       
@@ -132,29 +132,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- Table of Contents -->
-        
         <p>这几年的AI领域的发展真的是如火如荼。从图像，语音识别到无人车，无人售货店，应用范围十分广泛。毕竟AI的目的就是像人一样，目的是取代人，那么只要现在是人在做的岗位，通过AI讲故事都是可以讲得通的。资本就很愿意投资相关的项目。不过目前，受制于硬件的发展，大多数AI项目更多的是停留在虚拟空间。通过对大量数据的加工，机器作出决定，而由人来进行最后的实施。这个AI还无法直接与真实世界交互的时代可以被称为 ”近AI时代“。当机器人技术更加成熟后，AI直接通过机器人影响现实世界时，这才是 ”AI时代“。</p>
-<p>即使目前只是 ”近AI时代“，寄宿在虚拟空间的AI依然为社会带来了巨大的冲击。如今，以深度神经网络 (Deep Neraul Network) 为代表的 AI 算法已经可以有效的进行语音识别，图像识别。如果将AI比做一个生物，我们已经造出了它的视觉和听觉。AI可以代替人类去做听和看。对此常见的应用有手机解锁，通过监控检索特定人物，语音输入。</p>
-<p>相比单个人类，AI拥有更高的输入输出带宽。即使只能看和听，如今依然有很多曾经虚拟空间中的范式被打破了。最令网站头痛的事情就是如何分别流量是属于一个真人还是机器。最常用的识别方法就是要求用户输入验证码。然而AI的视觉已经可以极为高效的将简单的字符型验证码破解 <a href="https://www.lancaster.ac.uk/staff/wangz3/publications/ccs18.pdf" target="_blank" rel="noopener">[1]</a>。也就是说，通过这个技术任何个人/组织可以轻易的在需要验证码的网站上创建并控制大量的账号。网站内将会充斥着大量的僵尸号。这不但让网站浪费大量的资源在这些机器人上，更是伤害了网站社区的生态环境。而 AI 的听也可以被用于破解验证码。谷歌的 ReCaptcha 为了方便视力残障人士，可以将验证转为音频形式。然而有研究者通过谷歌的语音识别服务将音频形式的验证码识别出来，可谓是真正的“以彼之矛攻彼之盾”了 <a href="https://east-ee.com/2017/02/28/rebreakcaptcha-breaking-googles-recaptcha-v2-using-google/" target="_blank" rel="noopener">[2]</a>。</p>
-<p>以上是 AI 将人类生产的信息分析识别，那么 AI 是否可以像人类一样生产出信息呢？最原始的图灵测试就是让人类与一个机器进行对话，看人类是否能够分别出对面是否为机器。可见生产信息对 AI 是一个极大的挑战。我们可以将信息分为三大类：文字，声音，图片。 如今的 AI 已经逐渐可以生成这三类信息，同时这些信息无法被分辨是人或机器生成的。在 OpenAI 最近的报告中，他们通过 GTP-2 model 已经可以回答问题，理解和总结内容，以及翻译内容 <a href="https://openai.com/blog/better-language-models/" target="_blank" rel="noopener">[3]</a>。以下是该成果的一个样例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># HUMAN-WRITTEN </span><br><span class="line">In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># MACHINE-WRITTEN, 10 TRIES</span><br><span class="line">The scientist named the population, after their distinctive horn, Ovid’s Unicorn. These four-horned, silver-white unicorns were previously unknown to science.</span><br><span class="line"></span><br><span class="line">Now, after almost two centuries, the mystery of what sparked this odd phenomenon is finally solved.</span><br><span class="line"></span><br><span class="line">Dr. Jorge Pérez, an evolutionary biologist from the University of La Paz, and several companions, were exploring the Andes Mountains when they found a small valley, with no other animals or humans. Pérez noticed that the valley had what appeared to be a natural fountain, surrounded by two peaks of rock and silver snow.</span><br><span class="line"></span><br><span class="line">Pérez and the others then ventured further into the valley. “By the time we reached the top of one peak, the water looked blue, with some crystals on top,” said Pérez.</span><br><span class="line"></span><br><span class="line">Pérez and his friends were astonished to see the unicorn herd. These creatures could be seen from the air without having to move too much to see them – they were so close they could touch their horns.</span><br><span class="line"></span><br><span class="line">While examining these bizarre creatures the scientists discovered that the creatures also spoke some fairly regular English. Pérez stated, “We can see, for example, that they have a common ‘language,’ something like a dialect or dialectic.”</span><br><span class="line"></span><br><span class="line">Dr. Pérez believes that the unicorns may have originated in Argentina, where the animals were believed to be descendants of a lost race of people who lived there before the arrival of humans in those parts of South America.</span><br><span class="line"></span><br><span class="line">While their origins are still unclear, some believe that perhaps the creatures were created when a human and a unicorn met each other in a time before human civilization. According to Pérez, “In South America, such incidents seem to be quite common.”</span><br><span class="line"></span><br><span class="line">However, Pérez also pointed out that it is likely that the only way of knowing for sure if unicorns are indeed the descendants of a lost alien race is through DNA. “But they seem to be able to communicate in English quite well, which I believe is a sign of evolution, or at least a change in social organization,” said the scientist.</span><br></pre></td></tr></table></figure>
-<p>从这个例子我们可以看到人类只输入了一段话，而 AI 通过它的“知识”将这段话拓展成了一个完整的故事。当我看到这个报告，我的第一反应是：“假新闻不是无敌了？” 再想一想，以后研究员们不就不用写论文了？（笑）只用想出创意然后做实验。把动机和试验结果，剩下的全是机器来写。虽然目前这个模型还不够成熟，但是这依然解释了未来 AI 的一种可能性。</p>
-<p>最早为人所知的由电脑生成的语音应该是谷歌翻译后生成的语音（谷歌娘）。在 Google I/O 2018 上，Google Duplex 首次亮相。在这次发布会中，谷歌展示了使用 Google Duplex 进行餐厅预约。在演示中，用户只需告诉 Google Duplex 基本的订餐信息，Google Duplex 可以自然的和电话那头的餐厅接话员完成预约服务。同时，接话员并没有听出和他进行谈话的是机器而不是真人 <a href="https://www.youtube.com/watch?v=D5VN56jQMWM" target="_blank" rel="noopener">[4]</a> <a href="https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html" target="_blank" rel="noopener">[5]</a>。还有很多人尝试着用 AI 进行各种风格的音乐创作，这里就不一一列举了。</p>
-<p>通过 AI 生成各种风格的油画或者为黑白照片上色都是非常有趣的应用，但是在这里我想介绍另外两个应用: 1) <a href="https://thispersondoesnotexist.com/" target="_blank" rel="noopener">https://thispersondoesnotexist.com/</a>; 2) <a href="https://en.wikipedia.org/wiki/Deepfake" target="_blank" rel="noopener">Deepfake</a> 。第一个是通过对抗算法生成一个不存在的人的照片，第二个是将他人的脸替换一段视频中某个角色的脸。结合上面的文本生成和音频生成，我们完全可以炮制任何形式的假新闻。一个由不存在的记者报道着不存在的事用着不存在的音色。当这些技术更加成熟，我们又怎么能判断我们摄取的信息是真实可靠的呢？</p>
-<p>为了提高效率，很多服务可以通过网络来提供。比如曾经为了确保实名，事物需要本人去办理，如今更多的是要求用户手持身份证拍照。根据以上的技术，如果我有某人的身份证信息，我就可以用 AI 生成一份有效照片，从而代替他/她？如果手持身份证的照片都无法在互联网上证明我是我的时候，我们还有什么可以被用来验证的呢？又回到多年前的一个老问题：“你永远不知道网络的那一面是人还是狗”。这一次，在虚拟空间中，我们真的将无法区分虚拟与真实的边界。</p>
-<p>当我们模糊了虚拟和真实的边界，我首先想到的是某部科幻小说中的场景。在一个人类和机器人混合的时代，机器人有着人的样子将人类包围，为人类提供服务。所有机器人都假装是人类。而有一天，最后一个人死了，但是所有的机器人依然像人类一样继续生活。在这个”近 AI 时代“，如果我们不能处理好虚拟与现实的关系，即使技术继续进步，科幻小说中的桥段很有可能就是我们最后的结局。当我们实现了真正的 AI ，相比于人类，拥有更高信息带宽与处理速度的 AI 又凭什么不回去带我们呢？</p>
-<p>[1] <a href="https://www.lancaster.ac.uk/staff/wangz3/publications/ccs18.pdf" target="_blank" rel="noopener">Yet Another Text Captcha Solver: A Generative Adversarial Network Based Approach</a></p>
-<p>[2] <a href="https://east-ee.com/2017/02/28/rebreakcaptcha-breaking-googles-recaptcha-v2-using-google/" target="_blank" rel="noopener">ReBreakCaptcha: Breaking Google’s ReCaptcha v2 using Google</a></p>
-<p>[3] <a href="https://openai.com/blog/better-language-models/" target="_blank" rel="noopener">Better Language Models and Their Implications</a></p>
-<p>[4] <a href="https://www.youtube.com/watch?v=D5VN56jQMWM" target="_blank" rel="noopener">Google Duplex: A.I. Assistant Calls Local Businesses To Make Appointments</a></p>
-<p>[5] <a href="http://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html" target="_blank" rel="noopener">Google Duplex: An AI System for Accomplishing Real-World Tasks Over the Phone</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/03/15/近AI时代/#more">Read More »</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/03/15/近AI时代/" data-id="cjtuite4k000r9txpxuc40hcm" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/03/15/近AI时代/" data-id="cjtuiwyfw000rbuxppoowuztf" class="article-share-link">Share</a>
       
       
       
@@ -190,34 +177,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- Table of Contents -->
-        
         <p>When we write a simple Golang program <code>test</code>, like</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;time&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    time.Sleep(1000 * time.Millisecond)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>How Golang to implement these functions?</p>
 <p>In this blog, I simply analyze the timer that is used for <code>Sleep()</code> function of Golang v1.12. </p>
-<h1 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h1><p>Golang <code>Sleep()</code> function utilizes <code>hrtimer</code> to set timeout of sleep.</p>
-<h1 id="Full-article"><a href="#Full-article" class="headerlink" title="Full article"></a>Full article</h1><p>In Linux POSIX (Portable Operating System Interface), <code>sleep</code> function has been implemented. You can try </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sleep 1</span><br></pre></td></tr></table></figure>
-<p>in shell for sleeping one second, which is implemented by linux timer <code>nanosleep</code>.</p>
-<p>However, <a href="https://github.com/golang/go" target="_blank" rel="noopener">Golang</a> does not use timer for its <code>Sleep()</code> directly. If you check code in <code>go/src/time/sleep.go</code>, you’ll find that timer is not implemented in this file. Instead, it is implemented in <code>go/src/runtime/time.go</code>. In the function <code>timeSleep(ns int64)</code>, </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">func timeSleep(ns int64) &#123;</span><br><span class="line">	if ns &lt;= 0 &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	gp := getg()</span><br><span class="line">	t := gp.timer</span><br><span class="line">	if t == nil &#123;</span><br><span class="line">		t = new(timer)</span><br><span class="line">		gp.timer = t</span><br><span class="line">	&#125;</span><br><span class="line">	*t = timer&#123;&#125;</span><br><span class="line">	t.when = nanotime() + ns</span><br><span class="line">	t.f = goroutineReady</span><br><span class="line">	t.arg = gp</span><br><span class="line">	tb := t.assignBucket()</span><br><span class="line">	lock(&amp;tb.lock)</span><br><span class="line">	if !tb.addtimerLocked(t) &#123;</span><br><span class="line">		unlock(&amp;tb.lock)</span><br><span class="line">		badTimer()</span><br><span class="line">	&#125;</span><br><span class="line">	goparkunlock(&amp;tb.lock, waitReasonSleep, traceEvGoSleep, 2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>before line 17, function is creating a timer. In line 17, it locks timer. So, <code>Sleep()</code> sets up timer by locking a resource <code>ns</code> nanoseconds. If we use <code>strace</code> to run a go application,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ strace ./test</span><br><span class="line">...</span><br><span class="line">futex(0x55ca00, FUTEX_WAIT_PRIVATE, 0, NULL) = -1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p><code>Sleep()</code> call futex function to sleep.</p>
-<p>In the <code>go/src/runtime/lock_futex.go</code>, <code>lock</code> function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">func lock(l *mutex) &#123;</span><br><span class="line">	gp := getg()</span><br><span class="line"></span><br><span class="line">	if gp.m.locks &lt; 0 &#123;</span><br><span class="line">		throw(&quot;runtime·lock: lock count&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	gp.m.locks++</span><br><span class="line"></span><br><span class="line">	// Speculative grab for lock.</span><br><span class="line">	v := atomic.Xchg(key32(&amp;l.key), mutex_locked)</span><br><span class="line">	if v == mutex_unlocked &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// wait is either MUTEX_LOCKED or MUTEX_SLEEPING</span><br><span class="line">	// depending on whether there is a thread sleeping</span><br><span class="line">	// on this mutex. If we ever change l-&gt;key from</span><br><span class="line">	// MUTEX_SLEEPING to some other value, we must be</span><br><span class="line">	// careful to change it back to MUTEX_SLEEPING before</span><br><span class="line">	// returning, to ensure that the sleeping thread gets</span><br><span class="line">	// its wakeup call.</span><br><span class="line">	wait := v</span><br><span class="line"></span><br><span class="line">	// On uniprocessors, no point spinning.</span><br><span class="line">	// On multiprocessors, spin for ACTIVE_SPIN attempts.</span><br><span class="line">	spin := 0</span><br><span class="line">	if ncpu &gt; 1 &#123;</span><br><span class="line">		spin = active_spin</span><br><span class="line">	&#125;</span><br><span class="line">	for &#123;</span><br><span class="line">		// Try for lock, spinning.</span><br><span class="line">		for i := 0; i &lt; spin; i++ &#123;</span><br><span class="line">			for l.key == mutex_unlocked &#123;</span><br><span class="line">				if atomic.Cas(key32(&amp;l.key), mutex_unlocked, wait) &#123;</span><br><span class="line">					return</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			procyield(active_spin_cnt)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// Try for lock, rescheduling.</span><br><span class="line">		for i := 0; i &lt; passive_spin; i++ &#123;</span><br><span class="line">			for l.key == mutex_unlocked &#123;</span><br><span class="line">				if atomic.Cas(key32(&amp;l.key), mutex_unlocked, wait) &#123;</span><br><span class="line">					return</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			osyield()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// Sleep.</span><br><span class="line">		v = atomic.Xchg(key32(&amp;l.key), mutex_sleeping)</span><br><span class="line">		if v == mutex_unlocked &#123;</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		wait = mutex_sleeping</span><br><span class="line">		futexsleep(key32(&amp;l.key), mutex_sleeping, -1)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>line 57 calls <code>futexsleep</code>. </p>
-<p>In <code>go/src/runtime/os_linux.go</code>, function <code>futexsleep</code> is defined as to call futex function of linux. </p>
-<p><strong>So far, we can know that Golang utilize Linux <code>futex</code> function to set timer for <code>Sleep()</code> function.</strong> </p>
-<p>In <a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux</a> , <code>futex</code> is implemented in <code>linux/kernel/futex.c</code>. <code>hrtimer</code> is used as timer of <code>futex</code>. <code>hrtimer</code> is a high-resolution timer compared with the other timers (<code>itimers</code>, <code>POSIX timers</code>,<code>nanosleep</code>,<code>precise in-kernel timing</code>). </p>
-<p><strong>In summary</strong>, when we call <code>Sleep()</code> function in Golang, </p>
-<p>App calls sleep of Golang -&gt; Golang calls futex of Linux -&gt; futex utilizes hrtimer to be timer. </p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/02/27/Understanding-Golang-sleep-function/#more">Read More »</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="cjtuite4100059txpfhrulp18" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="cjtuiwyfa0005buxprt54hwl4" class="article-share-link">Share</a>
       
       
       
@@ -255,7 +227,8 @@
       
         <!-- Table of Contents -->
         
-        <ol>
+        <a id="more"></a>
+<ol>
 <li><p>Create repository</p>
 <blockquote>
 <p>Follow instructions in <a href="https://pages.github.com/" target="_blank" rel="noopener">github</a> to create a new repository</p>
@@ -331,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="cjtuite3z00039txpzrlkb74g" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="cjtuiwyf70003buxpc3e8v697" class="article-share-link">Share</a>
       
       
       
@@ -376,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/17/为什么我需要博客/" data-id="cjtuite3w00029txpy7fcqa60" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/17/为什么我需要博客/" data-id="cjtuiwyf30002buxpdn7ubgr2" class="article-share-link">Share</a>
       
       
       

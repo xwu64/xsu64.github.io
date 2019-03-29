@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
 <meta property="og:description" content="When we write a simple Golang program test, like 1234567package mainimport &amp;quot;time&amp;quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-28T16:54:14.612Z">
+<meta property="og:updated_time" content="2019-03-29T20:32:18.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Understanding Golang sleep() function">
 <meta name="twitter:description" content="When we write a simple Golang program test, like 1234567package mainimport &amp;quot;time&amp;quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
@@ -97,6 +97,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;time&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    time.Sleep(1000 * time.Millisecond)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>How Golang to implement these functions?</p>
 <p>In this blog, I simply analyze the timer that is used for <code>Sleep()</code> function of Golang v1.12. </p>
+<a id="more"></a>
 <h1 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h1><p>Golang <code>Sleep()</code> function utilizes <code>hrtimer</code> to set timeout of sleep.</p>
 <h1 id="Full-article"><a href="#Full-article" class="headerlink" title="Full article"></a>Full article</h1><p>In Linux POSIX (Portable Operating System Interface), <code>sleep</code> function has been implemented. You can try </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sleep 1</span><br></pre></td></tr></table></figure>
@@ -118,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="cjtuite4100059txpfhrulp18" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="cjtuiwyfa0005buxprt54hwl4" class="article-share-link">Share</a>
       
       
       

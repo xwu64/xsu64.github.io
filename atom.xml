@@ -47,17 +47,11 @@
     <link href="http://xwu64.github.io/2019/03/15/%E8%BF%91AI%E6%97%B6%E4%BB%A3/"/>
     <id>http://xwu64.github.io/2019/03/15/近AI时代/</id>
     <published>2019-03-16T01:34:19.000Z</published>
-    <updated>2019-03-15T22:36:37.391Z</updated>
+    <updated>2019-03-29T20:32:31.449Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;这几年的AI领域的发展真的是如火如荼。从图像，语音识别到无人车，无人售货店，应用范围十分广泛。毕竟AI的目的就是像人一样，目的是取代人，那么只要现在是人在做的岗位，通过AI讲故事都是可以讲得通的。资本就很愿意投资相关的项目。不过目前，受制于硬件的发展，大多数AI项目更多的是
-        
-      
+      &lt;p&gt;这几年的AI领域的发展真的是如火如荼。从图像，语音识别到无人车，无人售货店，应用范围十分广泛。毕竟AI的目的就是像人一样，目的是取代人，那么只要现在是人在做的岗位，通过AI讲故事都是可以讲得通的。资本就很愿意投资相关的项目。不过目前，受制于硬件的发展，大多数AI项目更多的是停留在虚拟空间。通过对大量数据的加工，机器作出决定，而由人来进行最后的实施。这个AI还无法直接与真实世界交互的时代可以被称为 ”近AI时代“。当机器人技术更加成熟后，AI直接通过机器人影响现实世界时，这才是 ”AI时代“。&lt;/p&gt;
     
     </summary>
     
@@ -75,18 +69,14 @@
     <link href="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/"/>
     <id>http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/</id>
     <published>2019-02-28T03:14:57.000Z</published>
-    <updated>2019-02-28T16:54:14.612Z</updated>
+    <updated>2019-03-29T20:32:18.032Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;When we write a simple Golang program &lt;code&gt;test&lt;/code&gt;, like&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
+      &lt;p&gt;When we write a simple Golang program &lt;code&gt;test&lt;/code&gt;, like&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;package main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import &amp;quot;time&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func main() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    time.Sleep(1000 * time.Millisecond)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;How Golang to implement these functions?&lt;/p&gt;
+&lt;p&gt;In this blog, I simply analyze the timer that is used for &lt;code&gt;Sleep()&lt;/code&gt; function of Golang v1.12. &lt;/p&gt;
     
     </summary>
     
@@ -102,7 +92,7 @@
     <link href="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/"/>
     <id>http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/</id>
     <published>2019-02-20T04:08:10.000Z</published>
-    <updated>2019-02-28T16:55:28.661Z</updated>
+    <updated>2019-03-29T20:31:55.698Z</updated>
     
     <summary type="html">
     
@@ -110,10 +100,11 @@
       
         
         
-          &lt;ol&gt;
+          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Create repository&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Follow instructions in &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;
+&lt;p&gt;Follow instructions in &lt;a href=&quot;https://pages.github.com/&quot;
         
       
     
