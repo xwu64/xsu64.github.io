@@ -6,7 +6,7 @@
   <title>Tutorial for Hexo+Github=Blog | Xiaoliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Create repository  Follow instructions in github to create a new repository   Install npm    Follow instructions in npmjs    Install Hexo   $ npm install hexo-cli -g   Create a new directory and init">
-<meta name="keywords" content="Blog,English,Tutorial,Hexo,Github">
+<meta name="keywords" content="Blog,Tutorial,English,Hexo,Github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tutorial for Hexo+Github=Blog">
 <meta property="og:url" content="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/index.html">
@@ -72,7 +72,7 @@
         <section id="main"><article id="post-Tutorial-for-Hexo-Github-Blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/19/Tutorial-for-Hexo-Github-Blog/" class="article-date">
-  <time datetime="2019-02-20T06:08:10.000Z" itemprop="datePublished">2019-02-19</time>
+  <time datetime="2019-02-20T04:08:10.000Z" itemprop="datePublished">2019-02-19</time>
 </a>
     
   </div>
@@ -169,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="cjthdhk8l0005hjy02ri7qwf1" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="cjtui6vqi0002yxxpp3xbhpqe" class="article-share-link">Share</a>
       
       
       
@@ -253,6 +253,8 @@
        
       
       
+           <div id="gitment_comments"></div>
+    
   </div>
  
   
@@ -363,6 +365,22 @@ window.onload = function() {
 
 <!-- author:forvoid begin -->
 <!-- author:forvoid begin -->
+
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> 
+  <script>
+  var gitment = new Gitment({
+    // id: '页面 ID', // 可选。默认为 location.href
+    owner: 'Xiaoliang',
+    repo: '',
+    oauth: {
+    client_id: '[object Object]',
+    client_secret: '[object Object]',
+    }
+  })
+  gitment.render(document.getElementById("gitment_comments"))
+</script>
+
 
 <!-- author:forvoid end -->
 
