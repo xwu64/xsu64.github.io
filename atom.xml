@@ -106,6 +106,8 @@
     </summary>
     
     
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
+    
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
@@ -113,8 +115,6 @@
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
-    
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
@@ -132,9 +132,9 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
-    
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
