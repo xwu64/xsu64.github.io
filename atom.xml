@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-03-20T15:39:05.646Z</updated>
+  <updated>2019-04-04T02:04:08.528Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Technically Understanding EOS</title>
+    <link href="http://xwu64.github.io/2019/04/03/Technically-Understanding-EOS/"/>
+    <id>http://xwu64.github.io/2019/04/03/Technically-Understanding-EOS/</id>
+    <published>2019-04-04T02:04:08.000Z</published>
+    <updated>2019-04-04T02:04:08.528Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;EOS.IO is a Blockchain system following BFT-DPOS (Byzantine Fault Tolerance - Delegated Proof of Stake) consensus. In this article, I will explain the workflow of EOS and compare it with Ethereum that is a PoW (Proof of Work) Blockchain. In the following, you can know&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;# Footprint of transactions in EOS.IO&quot;&gt;Footprint of transactions in EOS.IO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;# BFT-DPOS consensus algorithm in EOS.IO&quot;&gt;BFT-DPOS consensus algorithm in EOS.IO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;# Comparison between EOS and Ethereum&quot;&gt;Comparison between EOS and Ethereum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Blockchain" scheme="http://xwu64.github.io/tags/Blockchain/"/>
+    
+      <category term="EOS" scheme="http://xwu64.github.io/tags/EOS/"/>
+    
+      <category term="DPOS" scheme="http://xwu64.github.io/tags/DPOS/"/>
+    
+  </entry>
   
   <entry>
     <title>字典为什么没有开源项目？</title>
@@ -106,11 +135,11 @@
     </summary>
     
     
-      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
-    
       <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
