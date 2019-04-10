@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-04-04T02:04:08.528Z</updated>
+  <updated>2019-04-10T16:10:50.188Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Latex &quot;Text uses Type 3 font&quot; warning</title>
+    <link href="http://xwu64.github.io/2019/04/10/type3/"/>
+    <id>http://xwu64.github.io/2019/04/10/type3/</id>
+    <published>2019-04-10T16:10:50.000Z</published>
+    <updated>2019-04-10T16:10:50.188Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This Blog is written by Chinese. If you prefer a guide written by english, you can visit  &lt;a href=&quot;http://phyletica.org/matplotlib-fonts/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jamie Oaks’s Blog&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;最近提交论文后，收到了 ACM 的要求：将 “type 3 fonts” 变为 “type 1 fonts”。查了一下后，发现大多数论文都不能使用 “type 3 fonts”。因此记录一下这回的解决方案，免得下回四处 Google 。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Latex" scheme="http://xwu64.github.io/tags/Latex/"/>
+    
+      <category term="Bug Fix" scheme="http://xwu64.github.io/tags/Bug-Fix/"/>
+    
+  </entry>
   
   <entry>
     <title>Technically Understanding EOS</title>

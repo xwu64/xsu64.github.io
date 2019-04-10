@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Latex &#34;Text uses Type 3 font&#34; warning | Xiaoliang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This Blog is written by Chinese. If you prefer a guide written by english, you can visit  Jamie Oaks’s Blog.  最近提交论文后，收到了 ACM 的要求：将 “type 3 fonts” 变为 “type 1 fonts”。查了一下后，发现大多数论文都不能使用 “type 3 fonts”。因">
+<meta name="keywords" content="中文,Latex,Bug Fix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latex &quot;Text uses Type 3 font&quot; warning">
+<meta property="og:url" content="http://xwu64.github.io/2019/04/10/type3/index.html">
+<meta property="og:site_name" content="Xiaoliang&#39;s Blog">
+<meta property="og:description" content="This Blog is written by Chinese. If you prefer a guide written by english, you can visit  Jamie Oaks’s Blog.  最近提交论文后，收到了 ACM 的要求：将 “type 3 fonts” 变为 “type 1 fonts”。查了一下后，发现大多数论文都不能使用 “type 3 fonts”。因">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-10T16:10:50.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Latex &quot;Text uses Type 3 font&quot; warning">
+<meta name="twitter:description" content="This Blog is written by Chinese. If you prefer a guide written by english, you can visit  Jamie Oaks’s Blog.  最近提交论文后，收到了 ACM 的要求：将 “type 3 fonts” 变为 “type 1 fonts”。查了一下后，发现大多数论文都不能使用 “type 3 fonts”。因">
+  
+    <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xwu64.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Xiaoliang&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-type3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/10/type3/" class="article-date">
+  <time datetime="2019-04-10T16:10:50.000Z" itemprop="datePublished">2019-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Latex &#34;Text uses Type 3 font&#34; warning
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>This Blog is written by Chinese. If you prefer a guide written by english, you can visit  <a href="http://phyletica.org/matplotlib-fonts/" target="_blank" rel="noopener">Jamie Oaks’s Blog</a>. </p>
+<p>最近提交论文后，收到了 ACM 的要求：将 “type 3 fonts” 变为 “type 1 fonts”。查了一下后，发现大多数论文都不能使用 “type 3 fonts”。因此记录一下这回的解决方案，免得下回四处 Google 。</p>
+<a id="more"></a>
+<p>我发现在 ACM 标记出使用 “type 3 fonts” 的地方都为 PDF 图片。这是因为这些图片都是通过 matplotlib 来生成的，而 matplotlib 默认字体是 “type 3 fonts” 。因此，我们需要做的就是将 matplotlib 的默认字体从 “type 3 fonts” 转为 “type 1 fonts”。实现转换有很多方法，可以根据需求选择。</p>
+<p>想要检查是否 PDF 中包含 “type 3 fonts” 可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdffonts MY_PDF.pdf</span><br></pre></td></tr></table></figure>
+<p>MacOS 上可以通过安装 <code>poppler</code> 来安装 <code>pdffonts</code> 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install poppler</span><br></pre></td></tr></table></figure>
+<h1 id="Option-1"><a href="#Option-1" class="headerlink" title="Option 1"></a>Option 1</h1><p>我们可以通过修改 <code>matplotlibrc</code> 来改变所有 matplotlib 生成的 pdf 中的字体为 “type 3 fonts”。</p>
+<p>首先我们通过 <code>find</code> 找到 <code>matplotlibrc</code> 的位置，然后将其中的 <code>pdf.fonttype</code> 和 <code>ps.fonttype</code> 的值改为 <code>42</code>。 这样 matplotlib 生成的 PDF 中默认字体就为 “type 3 fonts”了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 matplotlibrc 位置</span></span><br><span class="line">sudo find / -name <span class="string">"matplotlibrc"</span></span><br><span class="line">  /usr/<span class="built_in">local</span>/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc</span><br><span class="line"><span class="comment"># 编辑 matplotlibrc 文件</span></span><br><span class="line">sudo vim /usr/<span class="built_in">local</span>/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pdf.fonttype : 42</span><br><span class="line">ps.fonttype : 42</span><br></pre></td></tr></table></figure>
+<h1 id="Option-2"><a href="#Option-2" class="headerlink" title="Option 2"></a>Option 2</h1><p>我们也可以在代码中加入以下代码，这样可以临时将 <code>pdf.fonttype</code> 和 <code>ps.fonttype</code> 变为 <code>42</code>。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.rcParams[<span class="string">'pdf.fonttype'</span>] = <span class="number">42</span></span><br><span class="line">matplotlib.rcParams[<span class="string">'ps.fonttype'</span>] = <span class="number">42</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xwu64.github.io/2019/04/10/type3/" data-id="cjubeuoek0005m7wpoen8e25u" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug-Fix/">Bug Fix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Latex/">Latex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中文/">中文</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/03/Technically-Understanding-EOS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Technically Understanding EOS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">Content</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Option-1"><span class="toc-number">1.</span> <span class="toc-text">Option 1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Option-2"><span class="toc-number">2.</span> <span class="toc-text">Option 2</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 Xiaoliang Wu&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      Contact&nbsp;|&nbsp;zurielibra@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
