@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-04-10T16:10:50.188Z</updated>
+  <updated>2019-06-14T03:36:52.742Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACM PADS poster</title>
+    <link href="http://xwu64.github.io/2019/06/13/ACM-PADS-poster/"/>
+    <id>http://xwu64.github.io/2019/06/13/ACM-PADS-poster/</id>
+    <published>2019-06-14T03:27:06.000Z</published>
+    <updated>2019-06-14T03:36:52.742Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;You can download PDF of poster by &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://drive.google.com/open?id=10--SnwxmsJIAVM5Sd-nI7DYMHfnngZTY&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Academic Conference" scheme="http://xwu64.github.io/tags/Academic-Conference/"/>
+    
+      <category term="Blockchain" scheme="http://xwu64.github.io/tags/Blockchain/"/>
+    
+      <category term="EOS.IO" scheme="http://xwu64.github.io/tags/EOS-IO/"/>
+    
+  </entry>
   
   <entry>
     <title>Latex &quot;Text uses Type 3 font&quot; warning</title>
@@ -160,13 +191,13 @@
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
+    
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
-    
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
@@ -184,9 +215,9 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
-    
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
