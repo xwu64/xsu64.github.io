@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-06-23T23:33:22.855Z</updated>
+  <updated>2019-06-23T23:40:51.132Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://xwu64.github.io/2019/06/23/%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E7%96%86%E5%9F%9F%E5%B1%95%E6%9C%9B/"/>
     <id>http://xwu64.github.io/2019/06/23/人类未来疆域展望/</id>
     <published>2019-06-23T23:27:01.000Z</published>
-    <updated>2019-06-23T23:33:22.855Z</updated>
+    <updated>2019-06-23T23:40:51.132Z</updated>
     
     <summary type="html">
     
@@ -209,15 +209,15 @@
     </summary>
     
     
-      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
-    
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
@@ -235,9 +235,9 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
-    
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
