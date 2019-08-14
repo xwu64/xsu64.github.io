@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-06-23T23:40:51.132Z</updated>
+  <updated>2019-08-14T02:08:21.129Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>996,996</title>
+    <link href="http://xwu64.github.io/2019/08/13/996-996/"/>
+    <id>http://xwu64.github.io/2019/08/13/996-996/</id>
+    <published>2019-08-14T02:07:24.000Z</published>
+    <updated>2019-08-14T02:08:21.129Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;996, 996&lt;br&gt;996 的码农写着代码&lt;br&gt;996 的司机开着出租&lt;br&gt;996 的医生做着手术&lt;br&gt;996
+        
+      
+    
+    </summary>
+    
+    
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="996" scheme="http://xwu64.github.io/tags/996/"/>
+    
+  </entry>
   
   <entry>
     <title>人类未来疆域展望</title>
@@ -184,9 +212,9 @@
     </summary>
     
     
-      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
-    
       <category term="Golang" scheme="http://xwu64.github.io/tags/Golang/"/>
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
   </entry>
   
@@ -211,9 +239,9 @@
     
       <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
-      <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
-    
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
