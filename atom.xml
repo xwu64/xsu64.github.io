@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-11-09T03:52:53.463Z</updated>
+  <updated>2019-11-16T22:41:18.306Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Create New User with Temporary Password on Linux</title>
+    <link href="http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/"/>
+    <id>http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/</id>
+    <published>2019-11-16T22:41:18.000Z</published>
+    <updated>2019-11-16T22:41:18.306Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;Create new user and home directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; useradd -m USERNAME&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;-m&lt;/code&gt;  option is used to create the user’s home directory if it does not exist.&lt;/p&gt;
+&lt;p&gt;If you want to specify the path of the home directory, use &lt;code&gt;-d&lt;/code&gt; and specify the path:&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; useradd -m -d /PATH/TO/FOLDER USERNAME&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Set temporary password for new user&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; passwd USERNAME&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Change password expiration information&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; chage -d 0 USERNAME&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;-d&lt;/code&gt;  option is used to set the number of days since January 1st, 1970 when the password was last changed.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Linux" scheme="http://xwu64.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Coffee Shop - Chicago (1)</title>
@@ -108,9 +143,9 @@
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
-      <category term="Academic Conference" scheme="http://xwu64.github.io/tags/Academic-Conference/"/>
-    
       <category term="Blockchain" scheme="http://xwu64.github.io/tags/Blockchain/"/>
+    
+      <category term="Academic Conference" scheme="http://xwu64.github.io/tags/Academic-Conference/"/>
     
       <category term="EOS.IO" scheme="http://xwu64.github.io/tags/EOS-IO/"/>
     
@@ -210,9 +245,9 @@
     
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
     
-      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
-    
       <category term="AI" scheme="http://xwu64.github.io/tags/AI/"/>
+    
+      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
     
   </entry>
   
@@ -258,15 +293,15 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
-    
-      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   

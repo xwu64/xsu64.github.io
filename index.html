@@ -66,6 +66,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Create-New-User-with-Temporary-Password-on-Linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/" class="article-date">
+  <time datetime="2019-11-16T22:41:18.000Z" itemprop="datePublished">2019-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/">Create New User with Temporary Password on Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Create new user and home directory</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> useradd -m USERNAME</span></span><br></pre></td></tr></table></figure>
+<p><code>-m</code>  option is used to create the user’s home directory if it does not exist.</p>
+<p>If you want to specify the path of the home directory, use <code>-d</code> and specify the path:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> useradd -m -d /PATH/TO/FOLDER USERNAME</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Set temporary password for new user</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> passwd USERNAME</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Change password expiration information</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> chage -d 0 USERNAME</span></span><br></pre></td></tr></table></figure>
+<p><code>-d</code>  option is used to set the number of days since January 1st, 1970 when the password was last changed.</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/#more">Read More »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/" data-id="ck325o40w000u8mz5ydlqk8kl" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-Coffee-Shop-Chicago-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/08/Coffee-Shop-Chicago-1/" class="article-date">
@@ -98,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/11/08/Coffee-Shop-Chicago-1/" data-id="ck2r1a2e00009b0y0n5mu7mty" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/11/08/Coffee-Shop-Chicago-1/" data-id="ck325o40y000x8mz59qnigsjp" class="article-share-link">Share</a>
       
       
       
@@ -144,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/08/13/996-996/" data-id="ck2r1a2e2000bb0y0zjupji6z" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/08/13/996-996/" data-id="ck325o40x000v8mz5j710xolc" class="article-share-link">Share</a>
       
       
       
@@ -189,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/06/23/人类未来疆域展望/" data-id="ck2r1a2f9001yb0y0m7sezmvb" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/06/23/人类未来疆域展望/" data-id="ck325o40t000r8mz58cbdwiaw" class="article-share-link">Share</a>
       
       
       
@@ -238,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/06/13/ACM-PADS-poster/" data-id="ck2r1a2dz0008b0y04z7le9sa" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/06/13/ACM-PADS-poster/" data-id="ck325o40r000p8mz5q2xehycg" class="article-share-link">Share</a>
       
       
       
@@ -284,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/04/10/type3/" data-id="ck2r1a2dx0006b0y02g3yo276" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/04/10/type3/" data-id="ck325o40u000s8mz5ks7qiqs1" class="article-share-link">Share</a>
       
       
       
@@ -334,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/04/03/Technically-Understanding-EOS/" data-id="ck2r1a2f7001wb0y0s60ttrud" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/04/03/Technically-Understanding-EOS/" data-id="ck325o40o000m8mz5utujaifd" class="article-share-link">Share</a>
       
       
       
@@ -378,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/03/20/字典为什么没有开源项目？/" data-id="ck2r1a2dv0005b0y0dz4rgmlf" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/03/20/字典为什么没有开源项目？/" data-id="ck325o40p000o8mz5jg3bq0tl" class="article-share-link">Share</a>
       
       
       
@@ -423,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/03/15/近AI时代/" data-id="ck2r1a2f6001vb0y06fvdbyfe" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/03/15/近AI时代/" data-id="ck325o40n000l8mz5lplda2ci" class="article-share-link">Share</a>
       
       
       
@@ -471,61 +531,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="ck2r1a2du0004b0y0hk25nswl" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="ck325o40l000k8mz5s9r8klh4" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/">Golang</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-Tutorial-for-Hexo-Github-Blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/19/Tutorial-for-Hexo-Github-Blog/" class="article-date">
-  <time datetime="2019-02-20T04:08:10.000Z" itemprop="datePublished">2019-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/Tutorial-for-Hexo-Github-Blog/">Tutorial for Hexo+Github=Blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>Create repository<blockquote>
-<p>Follow instructions in <a href="https://pages.github.com/" target="_blank" rel="noopener">github</a> to create a new repository</p>
-</blockquote>
-</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/19/Tutorial-for-Hexo-Github-Blog/#more">Read More »</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="ck2r1a2dq0002b0y0dzpcuz5w" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li></ul>
 
     </footer>
   </div>
@@ -553,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/996/" style="font-size: 14px;">996</a> <a href="/tags/AI/" style="font-size: 14px;">AI</a> <a href="/tags/Academic-Conference/" style="font-size: 14px;">Academic Conference</a> <a href="/tags/Blockchain/" style="font-size: 17.67px;">Blockchain</a> <a href="/tags/Blog/" style="font-size: 17.67px;">Blog</a> <a href="/tags/Bug-Fix/" style="font-size: 14px;">Bug Fix</a> <a href="/tags/DPOS/" style="font-size: 14px;">DPOS</a> <a href="/tags/EOS/" style="font-size: 14px;">EOS</a> <a href="/tags/EOS-IO/" style="font-size: 14px;">EOS.IO</a> <a href="/tags/English/" style="font-size: 21.33px;">English</a> <a href="/tags/Github/" style="font-size: 14px;">Github</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 14px;">Latex</a> <a href="/tags/Photos/" style="font-size: 14px;">Photos</a> <a href="/tags/Tutorial/" style="font-size: 14px;">Tutorial</a> <a href="/tags/coffee-shop/" style="font-size: 14px;">coffee shop</a> <a href="/tags/中文/" style="font-size: 25px;">中文</a> <a href="/tags/随想/" style="font-size: 21.33px;">随想</a>
+      <a href="/tags/996/" style="font-size: 14px;">996</a> <a href="/tags/AI/" style="font-size: 14px;">AI</a> <a href="/tags/Academic-Conference/" style="font-size: 14px;">Academic Conference</a> <a href="/tags/Blockchain/" style="font-size: 16.75px;">Blockchain</a> <a href="/tags/Blog/" style="font-size: 16.75px;">Blog</a> <a href="/tags/Bug-Fix/" style="font-size: 14px;">Bug Fix</a> <a href="/tags/DPOS/" style="font-size: 14px;">DPOS</a> <a href="/tags/EOS/" style="font-size: 14px;">EOS</a> <a href="/tags/EOS-IO/" style="font-size: 14px;">EOS.IO</a> <a href="/tags/English/" style="font-size: 22.25px;">English</a> <a href="/tags/Github/" style="font-size: 14px;">Github</a> <a href="/tags/Golang/" style="font-size: 14px;">Golang</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Latex/" style="font-size: 14px;">Latex</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Photos/" style="font-size: 14px;">Photos</a> <a href="/tags/Tutorial/" style="font-size: 14px;">Tutorial</a> <a href="/tags/coffee-shop/" style="font-size: 14px;">coffee shop</a> <a href="/tags/中文/" style="font-size: 25px;">中文</a> <a href="/tags/随想/" style="font-size: 19.5px;">随想</a>
     </div>
   </div>
 
@@ -563,6 +573,10 @@
     <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/">Create New User with Temporary Password on Linux</a>
+          </li>
         
           <li>
             <a href="/2019/11/08/Coffee-Shop-Chicago-1/">Coffee Shop - Chicago (1)</a>
@@ -580,10 +594,6 @@
             <a href="/2019/06/13/ACM-PADS-poster/">ACM PADS poster</a>
           </li>
         
-          <li>
-            <a href="/2019/04/10/type3/">Latex &#34;Text uses Type 3 font&#34; warning</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -593,7 +603,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 

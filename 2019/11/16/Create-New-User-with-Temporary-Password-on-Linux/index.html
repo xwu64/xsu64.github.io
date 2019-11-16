@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Tutorial for Hexo+Github=Blog | Xiaoliang&#39;s Blog</title>
+  <title>Create New User with Temporary Password on Linux | Xiaoliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Create repository Follow instructions in github to create a new repository">
-<meta name="keywords" content="English,Tutorial,Hexo,Github,Blog">
+  <meta name="description" content="Create new user and home directory  1&amp;gt; useradd -m USERNAME -m  option is used to create the user’s home directory if it does not exist. If you want to specify the path of the home directory, use -">
+<meta name="keywords" content="English,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tutorial for Hexo+Github=Blog">
-<meta property="og:url" content="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/index.html">
+<meta property="og:title" content="Create New User with Temporary Password on Linux">
+<meta property="og:url" content="http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/index.html">
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
-<meta property="og:description" content="Create repository Follow instructions in github to create a new repository">
+<meta property="og:description" content="Create new user and home directory  1&amp;gt; useradd -m USERNAME -m  option is used to create the user’s home directory if it does not exist. If you want to specify the path of the home directory, use -">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-29T20:37:25.172Z">
+<meta property="og:updated_time" content="2019-11-16T22:41:18.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tutorial for Hexo+Github=Blog">
-<meta name="twitter:description" content="Create repository Follow instructions in github to create a new repository">
+<meta name="twitter:title" content="Create New User with Temporary Password on Linux">
+<meta name="twitter:description" content="Create new user and home directory  1&amp;gt; useradd -m USERNAME -m  option is used to create the user’s home directory if it does not exist. If you want to specify the path of the home directory, use -">
   
     <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Tutorial-for-Hexo-Github-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Create-New-User-with-Temporary-Password-on-Linux" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/19/Tutorial-for-Hexo-Github-Blog/" class="article-date">
-  <time datetime="2019-02-20T04:08:10.000Z" itemprop="datePublished">2019-02-19</time>
+    <a href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/" class="article-date">
+  <time datetime="2019-11-16T22:41:18.000Z" itemprop="datePublished">2019-11-16</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tutorial for Hexo+Github=Blog
+      Create New User with Temporary Password on Linux
     </h1>
   
 
@@ -94,87 +94,35 @@
         <!-- Table of Contents -->
         
         <ol>
-<li>Create repository<blockquote>
-<p>Follow instructions in <a href="https://pages.github.com/" target="_blank" rel="noopener">github</a> to create a new repository</p>
-</blockquote>
-</li>
+<li>Create new user and home directory</li>
 </ol>
-<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> useradd -m USERNAME</span></span><br></pre></td></tr></table></figure>
+<p><code>-m</code>  option is used to create the user’s home directory if it does not exist.</p>
+<p>If you want to specify the path of the home directory, use <code>-d</code> and specify the path:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> useradd -m -d /PATH/TO/FOLDER USERNAME</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>Install <code>npm</code></li>
+<li>Set temporary password for new user</li>
 </ol>
-<blockquote>
-<p>Follow instructions in <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm" target="_blank" rel="noopener">npmjs</a> </p>
-</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> passwd USERNAME</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>Install <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></li>
+<li>Change password expiration information</li>
 </ol>
-<blockquote>
-<p>$ npm install hexo-cli -g</p>
-</blockquote>
-<ol start="4">
-<li>Create a new directory and initialize</li>
-</ol>
-<blockquote>
-<p>$ hexo init blog</p>
-<p>$ cd blog</p>
-<p>$ npm install</p>
-</blockquote>
-<ol start="5">
-<li><p>Copy blog in <code>blog\source\_posts</code></p>
-</li>
-<li><p>Generate static website</p>
-</li>
-</ol>
-<blockquote>
-<p>$ hexo generate</p>
-</blockquote>
-<ol start="7">
-<li>Configure deployed repository in <code>__config.yml</code>  </li>
-</ol>
-<blockquote>
-<p>$ vim __config.yml</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:USERNAME/USERNAME.github.io.git</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>Install <code>hexo-deployer-git</code></li>
-</ol>
-<blockquote>
-<p>$ npm install hexo-deployer-git -save</p>
-</blockquote>
-<ol start="9">
-<li>Deploy</li>
-</ol>
-<blockquote>
-<p>$ hexo deploy</p>
-</blockquote>
-<p>Now, you can access your blog through <em>USERNAME.github.io</em>. </p>
-<p>Hexo is used to generate static website. Github is used as web server. </p>
-<ul>
-<li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">Generate Atom for RSS</a></li>
-</ul>
-<blockquote>
-<p>$ npm install hexo-generator-feed –save</p>
-<p>$ vim __config.yml</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">    type: atom</span><br><span class="line">    path: atom.xml</span><br><span class="line">    limit: 20</span><br><span class="line">    hub:</span><br><span class="line">    content:</span><br><span class="line">    content_limit: 140</span><br><span class="line">    content_limit_delim: &apos; &apos;</span><br><span class="line">    order_by: -date</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Change Theme</li>
-</ul>
-<blockquote>
-<p>$ git clone THEME_URL themes/THEME_NAME</p>
-<p>$ vim __config.yml</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">    theme: THEME_NAME</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> chage -d 0 USERNAME</span></span><br></pre></td></tr></table></figure>
+<p><code>-d</code>  option is used to set the number of days since January 1st, 1970 when the password was last changed.</p>
+<a id="more"></a>
+<p>After previous three steps, you can email username and temporary password to user. User will be asked to change password for the first time. </p>
+<p>More details of commands and their options can be checked by <code>man</code>  command, like using</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> man chage</span></span><br></pre></td></tr></table></figure>
+<p>to check all of information of <code>chage</code>  command. </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/" data-id="ck325o40i000g8mz5dfomxxha" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/" data-id="ck325o40w000u8mz5ydlqk8kl" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -224,19 +172,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/02/27/Understanding-Golang-sleep-function/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Understanding Golang sleep() function
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/17/为什么我需要博客/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/11/08/Coffee-Shop-Chicago-1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">为什么我需要博客</div>
+      <div class="article-nav-title">Coffee Shop - Chicago (1)</div>
     </a>
   
 </nav>
