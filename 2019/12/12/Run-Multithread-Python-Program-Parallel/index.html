@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Python 中的多线程“并行“ | Xiaoliang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这几天尝试用 Python3 写一个多线程应用，发现了一个之前一直不知道的语言特性：GIL (Global Interpreter Lock) 全局解释器锁。 先写结论：GIL 的存在让 Python 的多线程应用只能实现并发，而不能实现并行。如果想实现并行，只能通过多进程。">
+<meta name="keywords" content="中文,Python,GIL,Multithread,Parallel,Cython">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 中的多线程“并行“">
+<meta property="og:url" content="http://xwu64.github.io/2019/12/12/Run-Multithread-Python-Program-Parallel/index.html">
+<meta property="og:site_name" content="Xiaoliang&#39;s Blog">
+<meta property="og:description" content="这几天尝试用 Python3 写一个多线程应用，发现了一个之前一直不知道的语言特性：GIL (Global Interpreter Lock) 全局解释器锁。 先写结论：GIL 的存在让 Python 的多线程应用只能实现并发，而不能实现并行。如果想实现并行，只能通过多进程。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-83212cm">
+<meta property="og:image" content="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-gwnd122h">
+<meta property="og:image" content="https://hackernoon.com/drafts/9y1zw12i8.png">
+<meta property="og:updated_time" content="2019-12-12T19:42:01.795Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 中的多线程“并行“">
+<meta name="twitter:description" content="这几天尝试用 Python3 写一个多线程应用，发现了一个之前一直不知道的语言特性：GIL (Global Interpreter Lock) 全局解释器锁。 先写结论：GIL 的存在让 Python 的多线程应用只能实现并发，而不能实现并行。如果想实现并行，只能通过多进程。">
+<meta name="twitter:image" content="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-83212cm">
+  
+    <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xwu64.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Xiaoliang&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Run-Multithread-Python-Program-Parallel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/12/Run-Multithread-Python-Program-Parallel/" class="article-date">
+  <time datetime="2019-12-12T19:42:01.000Z" itemprop="datePublished">2019-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python 中的多线程“并行“
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>这几天尝试用 Python3 写一个多线程应用，发现了一个之前一直不知道的语言特性：GIL (Global Interpreter Lock) 全局解释器锁。</p>
+<p>先写结论：<strong>GIL 的存在让 Python 的多线程应用只能实现<u>并发</u>，而不能实现<u>并行</u>。如果想实现并行，只能通过多进程。</strong></p>
+<a id="more"></a> 
+<p>关于并发，并行以及 GIL 的细节可以看这篇<a href="https://hackernoon.com/concurrent-programming-in-python-is-not-what-you-think-it-is-b6439c3f3e6a" target="_blank" rel="noopener">博客（英文）</a> [1]。这里简单描述一下并发 (Concurrency) 与并行 (Parallelism) 之间的区别。从下图中可以看到在并发中，处理能力并没有得到提升。而并行是真正运用多个处理器同时处理，提升了总体的处理能力。</p>
+<p><img src="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-83212cm" alt="并发示意图；服务员可以类比为CPU；顾客可以类比为需要处理的工作"></p>
+<p><img src="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-gwnd122h" alt="并行示意图"></p>
+<p>在这里，我所希望的是一个可以并行的程序，而不是一个并发程序。我首先想到的就是多线程编程。通过调用 Python 里的 threading 库，利用多线程达到并行。</p>
+<p>因此，我们首先实现一个单线程的程序 (test1) 作为benchmark。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">demo1</span><span class="params">(N)</span>:</span></span><br><span class="line">    flag = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        flag = <span class="keyword">not</span> flag</span><br><span class="line">    print(<span class="string">'end'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(N)</span>:</span></span><br><span class="line">    print(<span class="string">"Single thread"</span>)</span><br><span class="line">    demo1(N)</span><br><span class="line">    demo1(N)</span><br><span class="line"></span><br><span class="line">test1(int(<span class="number">1e9</span>))</span><br></pre></td></tr></table></figure>
+<p>运行时间为<strong>90</strong>秒。</p>
+<p>然后我们实现一个多线程的程序 (test2) 运行，这里我们用两个线程分别运行<code>demo1</code> 。理论上应该会提高一倍的速度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">(N)</span>:</span></span><br><span class="line">    print(<span class="string">"Two thread with Python threading library"</span>)</span><br><span class="line">    thread1 = Thread(target=demo1, args=(N,))</span><br><span class="line">    thread2 = Thread(target=demo1, args=(N,))</span><br><span class="line">    thread1.start()</span><br><span class="line">    thread2.start()</span><br><span class="line">    thread1.join()</span><br><span class="line">    thread2.join()</span><br></pre></td></tr></table></figure>
+<p>结果，运行时间为<strong>79</strong>秒！虽然速度是快了，但是明显不及我们预期的一倍。</p>
+<p>而性能不及预期的原因就是在一开始提到的全局解释器锁 (GIL)。由于历史原因，Python 并没有锁操作，所以为了防止多个线程之间的读写冲突，Python 使用 GIL 作为全局锁。换句话说，Python 的解释器每次只会执行一个线程。下图展示了 Python 多线程程序真正的运行方式。</p>
+<p><img src="https://hackernoon.com/drafts/9y1zw12i8.png" alt="Python 多线程运行"></p>
+<p>可以看出来，每个线程要运行前先请求 GIL，当线程阻塞时（比如 I/O 阻塞），线程释放 GIL，这时，另一个线程会接着运行。因此，Python 的多线程程序在同一时间只有一个线程在运行。多线程 Python 程序只是并发，而不是并行。</p>
+<p>这就解释了为什么<code>test2</code> 的速度并不是 <code>test1</code> 的2倍。</p>
+<hr>
+<p>实现一个并行的 Python 程序有以下的几种方法：</p>
+<ul>
+<li>使用多进程</li>
+<li>使用 Cython 等库调用 C++ 代码</li>
+<li>更换解释器，并不是所有 Python 解释器都有 GIL，比如 Jython 就不具有 GIL，但是很多库可能就不能用了</li>
+</ul>
+<p>因为进程间并不共享内存，所以无需担心并行中的读写冲突问题。进程之间通过 IPC 进行通信。但 IPC 的 overhead 明显会降低程序的性能。所以多进程适用于通信不频繁的并行程序。</p>
+<p>这里，我们可以通过 <code>Multiprocessing</code> 来实现一个多进程 Python 程序 (<code>test3</code>)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test3</span><span class="params">(N)</span>:</span></span><br><span class="line">    print(<span class="string">"Two process"</span>)</span><br><span class="line">    p1 = Process(target=demo1, args=(N,))</span><br><span class="line">    p2 = Process(target=demo1, args=(N,))</span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p1.join()</span><br><span class="line">    p2.join()</span><br></pre></td></tr></table></figure>
+<p>运行时间为<strong>42</strong>秒！大概是单线程的一半。可见多进程利用多个 CPU 实现了并行计算。</p>
+<p>关于 cython 的使用可以参考这篇<a href="https://www.jianshu.com/p/9410db8fbf50" target="_blank" rel="noopener">博客</a> [2]。但是值得注意的是，利用 cython <strong>只能实现 C++ 部分代码的并行</strong>。一旦运行 Python 部分的代码，GIL又回让程序从并行变为并发。</p>
+<p>在这里，我并没有尝试使用其他解释器，有兴趣的朋友可以自己试验一下。</p>
+<p>关于 GIL 一直有很多讨论，大家可以通过 [3] [4] [5] 更多的了解 GIL 的优缺点。</p>
+<hr>
+<p>[1] <a href="https://hackernoon.com/concurrent-programming-in-python-is-not-what-you-think-it-is-b6439c3f3e6a" target="_blank" rel="noopener">Concurrent Programming in Python is not what you think it is</a></p>
+<p>[2] <a href="https://www.jianshu.com/p/9410db8fbf50" target="_blank" rel="noopener">什么，听说3分钟入门Cython？？</a></p>
+<p>[3] <a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p09_dealing_with_gil_stop_worring_about_it.html" target="_blank" rel="noopener">12.9 Python的全局锁问题</a></p>
+<p>[4] <a href="http://cenalulu.github.io/python/gil-in-python/" target="_blank" rel="noopener">Python的GIL是什么鬼，多线程性能究竟如何</a></p>
+<p>[5] <a href="https://v2ex.com/t/621285" target="_blank" rel="noopener">Python 的多线程原来不是真的多线程啊</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xwu64.github.io/2019/12/12/Run-Multithread-Python-Program-Parallel/" data-id="ck434psx900172mxkcogsfkdr" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cython/">Cython</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIL/">GIL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Multithread/">Multithread</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Parallel/">Parallel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中文/">中文</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Create New User with Temporary Password on Linux</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/12/Run-Multithread-Python-Program-Parallel/">Python 中的多线程“并行“</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/">Create New User with Temporary Password on Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/08/Coffee-Shop-Chicago-1/">Coffee Shop - Chicago (1)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/13/996-996/">996,996</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/23/人类未来疆域展望/">人类未来疆域展望</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 Xiaoliang Wu&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      Contact&nbsp;|&nbsp;zurielibra@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
