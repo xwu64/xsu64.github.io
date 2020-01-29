@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2019-12-12T19:42:01.795Z</updated>
+  <updated>2020-01-29T04:28:52.063Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>己亥除夕</title>
+    <link href="http://xwu64.github.io/2020/01/24/%E5%B7%B1%E4%BA%A5%E9%99%A4%E5%A4%95/"/>
+    <id>http://xwu64.github.io/2020/01/24/己亥除夕/</id>
+    <published>2020-01-25T02:59:04.000Z</published>
+    <updated>2020-01-29T04:28:52.063Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;雪浅夜深爆竹夜&lt;br&gt;键白字黑文章现&lt;br&gt;家有归无又几载&lt;br&gt;学海书山为功名&lt;/p&gt;
+&lt;p&gt;祝大家鼠年大吉，身体健康！&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 中的多线程“并行“</title>
@@ -172,9 +200,9 @@
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
-      <category term="Academic Conference" scheme="http://xwu64.github.io/tags/Academic-Conference/"/>
-    
       <category term="Blockchain" scheme="http://xwu64.github.io/tags/Blockchain/"/>
+    
+      <category term="Academic Conference" scheme="http://xwu64.github.io/tags/Academic-Conference/"/>
     
       <category term="EOS.IO" scheme="http://xwu64.github.io/tags/EOS-IO/"/>
     
@@ -274,9 +302,9 @@
     
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
     
-      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
-    
       <category term="AI" scheme="http://xwu64.github.io/tags/AI/"/>
+    
+      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
     
   </entry>
   
@@ -324,13 +352,13 @@
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
+    
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
-    
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
@@ -348,9 +376,9 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
-    
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
