@@ -14,7 +14,7 @@
 <meta property="og:description" content="When we do experiments to observe or demonstrate some ideas, one graph can produce a correct intuition if you use a proper graph. For example, if you want to observe the distribution of data, the bar">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcvmkbmvoxj30aw07qjrh.jpg">
-<meta property="og:updated_time" content="2020-03-16T04:18:04.139Z">
+<meta property="og:updated_time" content="2020-03-16T04:24:28.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Plot Graph to Show Ideas - Installation and Scatter Plot">
 <meta name="twitter:description" content="When we do experiments to observe or demonstrate some ideas, one graph can produce a correct intuition if you use a proper graph. For example, if you want to observe the distribution of data, the bar">
@@ -102,8 +102,7 @@
 <a id="more"></a>
 <h1 id="Install-Matplotlib"><a href="#Install-Matplotlib" class="headerlink" title="Install Matplotlib"></a>Install Matplotlib</h1><p>The installation instruction can be found on the <a href="https://matplotlib.org/users/installing.html" target="_blank" rel="noopener">website</a> of Matplotlib. If you have pip, you can use the following command to install directly.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install matplotlib</span><br></pre></td></tr></table></figure>
-<p>#Scatter Plot (2D)</p>
-<p>A comprehensive description of the scatter plot can be found on <a href="https://en.wikipedia.org/wiki/Scatter_plot" target="_blank" rel="noopener">Wikipedia</a>. </p>
+<h1 id="Scatter-Plot-2D"><a href="#Scatter-Plot-2D" class="headerlink" title="Scatter Plot (2D)"></a>Scatter Plot (2D)</h1><p>A comprehensive description of the scatter plot can be found on <a href="https://en.wikipedia.org/wiki/Scatter_plot" target="_blank" rel="noopener">Wikipedia</a>. </p>
 <p>TL;DR: the scatter plot is usually used to find the distribution of data with two dimensions.  </p>
 <p>To draw the scatter plot, we can use the code shown below. </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># fake data</span></span><br><span class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">y = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># function that you use to plot</span></span><br><span class="line">plt.scatter(x, y, marker=<span class="string">'o'</span>, color=<span class="string">"g"</span>, label=<span class="string">"green"</span>)</span><br><span class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">y = [<span class="number">2</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">17</span>]</span><br><span class="line">plt.scatter(x, y, marker=<span class="string">'x'</span>, color=<span class="string">"r"</span>, label=<span class="string">"read"</span>)</span><br><span class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">y = [<span class="number">0.5</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">15</span>]</span><br><span class="line">plt.scatter(x, y, marker=<span class="string">'*'</span>, color=<span class="string">"b"</span>, label=<span class="string">"blue"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create legend</span></span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line"><span class="comment"># set label of x and y axies</span></span><br><span class="line">plt.xlabel(<span class="string">"x"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"y"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set title</span></span><br><span class="line">plt.title(<span class="string">"scatter plot"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># present graph</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
@@ -117,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2020/03/15/plot-graph-to-show-ideas/" data-id="ck7tyjjrv000rs8y0bb39x0z5" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2020/03/15/plot-graph-to-show-ideas/" data-id="ck7tyl372001uuvy0hdz1xmks" class="article-share-link">Share</a>
       
       
       
@@ -207,7 +206,7 @@
       
         <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-Matplotlib"><span class="toc-number">1.</span> <span class="toc-text">Install Matplotlib</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-Matplotlib"><span class="toc-number">1.</span> <span class="toc-text">Install Matplotlib</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Scatter-Plot-2D"><span class="toc-number">2.</span> <span class="toc-text">Scatter Plot (2D)</span></a></li></ol>
           </div>
       </div>
     </div>
