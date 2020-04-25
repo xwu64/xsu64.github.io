@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2020-03-16T04:24:28.598Z</updated>
+  <updated>2020-04-25T01:48:22.191Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Most Commonly Used Python Data Structures that are NOT built-in</title>
+    <link href="http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/"/>
+    <id>http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/</id>
+    <published>2020-04-25T01:48:22.000Z</published>
+    <updated>2020-04-25T01:48:22.191Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This blog will introduce &lt;strong&gt;deque&lt;/strong&gt;, &lt;strong&gt;bisect&lt;/strong&gt;, &lt;strong&gt;defaultdict&lt;/strong&gt;, &lt;strong&gt;Counter&lt;/strong&gt;, &lt;strong&gt;OrderedDict&lt;/strong&gt;, &lt;strong&gt;heapq&lt;/strong&gt;. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inbuilt data structures (Lists, Dictionary, Tuple, and Sets) can be learned from &lt;a href=&quot;https://www.geeksforgeeks.org/inbuilt-data-structures-python/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GeeksforGeeks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Of course, this blog won’t cover all useful functions or data structures. I’ll update this article when I find more useful data structures. &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
+      <category term="Python" scheme="http://xwu64.github.io/tags/Python/"/>
+    
+      <category term="Data Structure" scheme="http://xwu64.github.io/tags/Data-Structure/"/>
+    
+      <category term="LeetCode" scheme="http://xwu64.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Plot Graph to Show Ideas - Installation and Scatter Plot</title>
@@ -327,9 +352,9 @@
     
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
     
-      <category term="AI" scheme="http://xwu64.github.io/tags/AI/"/>
-    
       <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="AI" scheme="http://xwu64.github.io/tags/AI/"/>
     
   </entry>
   
@@ -375,11 +400,11 @@
     </summary>
     
     
+      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
+    
       <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
-    
-      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
