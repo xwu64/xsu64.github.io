@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2020-08-28T18:11:43.626Z</updated>
+  <updated>2020-08-28T18:13:24.674Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/"/>
     <id>http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/</id>
     <published>2020-08-28T18:07:03.000Z</published>
-    <updated>2020-08-28T18:11:43.626Z</updated>
+    <updated>2020-08-28T18:13:24.674Z</updated>
     
     <summary type="html">
     
@@ -35,8 +35,6 @@
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Python" scheme="http://xwu64.github.io/tags/Python/"/>
-    
-      <category term="Matplotlib" scheme="http://xwu64.github.io/tags/Matplotlib/"/>
     
   </entry>
   
@@ -376,9 +374,9 @@
     
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
     
-      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
-    
       <category term="AI" scheme="http://xwu64.github.io/tags/AI/"/>
+    
+      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
     
   </entry>
   
@@ -426,13 +424,13 @@
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
+    
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
-    
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
