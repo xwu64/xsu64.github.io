@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>Comparison of Python Linked List Modules llist, pyllist, cllist | Xiaoliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="TL;DR: cllist module presents the best performance.">
-<meta name="keywords" content="English,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Comparison of Python Linked List Modules llist, pyllist, cllist">
 <meta property="og:url" content="http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/index.html">
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
 <meta property="og:description" content="TL;DR: cllist module presents the best performance.">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
 <meta property="og:image" content="https://github.com/xwu64/compare_python_llist_module/blob/master/figures/appendleft.png?raw=true">
 <meta property="og:image" content="https://github.com/xwu64/compare_python_llist_module/blob/master/figures/appendright.png?raw=true">
 <meta property="og:image" content="https://github.com/xwu64/compare_python_llist_module/blob/master/figures/popleft.png?raw=True">
 <meta property="og:image" content="https://github.com/xwu64/compare_python_llist_module/blob/master/figures/popright.png?raw=True">
 <meta property="og:image" content="https://github.com/xwu64/compare_python_llist_module/blob/master/figures/remove.png?raw=True">
-<meta property="og:updated_time" content="2020-08-28T18:13:24.674Z">
+<meta property="article:published_time" content="2020-08-28T18:07:03.000Z">
+<meta property="article:modified_time" content="2020-08-28T18:13:24.000Z">
+<meta property="article:author" content="Xiaoliang Wu">
+<meta property="article:tag" content="English">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Comparison of Python Linked List Modules llist, pyllist, cllist">
-<meta name="twitter:description" content="TL;DR: cllist module presents the best performance.">
 <meta name="twitter:image" content="https://github.com/xwu64/compare_python_llist_module/blob/master/figures/appendleft.png?raw=true">
   
     <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
@@ -32,11 +33,13 @@
   
     
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -106,18 +109,18 @@
 <p>When I searched Python modules of linked list from <code>pip</code>, I got three avaialble modules: <code>llist</code>, <code>pyllist</code> and <code>cllist</code>. </p>
 <p>Description of <code>llist</code>:</p>
 <blockquote>
-<p><a href="https://github.com/ajakubek/python-llist" target="_blank" rel="noopener">llist is an extension module for CPython providing basic linked list data structures.</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ajakubek/python-llist">llist is an extension module for CPython providing basic linked list data structures.</a></p>
 </blockquote>
 <p>Description of <code>pyllist</code>:</p>
 <blockquote>
-<p><a href="https://github.com/rgsoda/pypy-llist" target="_blank" rel="noopener">pyllist is a Python module providing basic linked list data structures.</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rgsoda/pypy-llist">pyllist is a Python module providing basic linked list data structures.</a></p>
 </blockquote>
 <p>Description of <code>cllist</code>:</p>
 <blockquote>
-<p><a href="https://github.com/kata198/python-cllist" target="_blank" rel="noopener">cllist is an extension module for CPython providing basic linked list data structures.</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/kata198/python-cllist">cllist is an extension module for CPython providing basic linked list data structures.</a></p>
 </blockquote>
 <p>Since <code>llist</code> and <code>cllist</code> use CPython to implmement the linked list, I expect the speed of these two modules is faster than the <code>pyllist</code> module. Meanwhile, I want to know which module is the fastest one and quantify the difference of performance.</p>
-<p>In the following content, I’ll test the speed of five most common functions of <strong>singly</strong> linked list: <code>appendleft</code>, <code>appendright</code>, <code>popleft</code>, <code>popright</code> and <code>remove</code>. You can check the source code by <a href="https://github.com/xwu64/compare_python_llist_module/blob/master/compare_llist_lib.py" target="_blank" rel="noopener">clickhere</a>. Please feel free to reproduce these tests.</p>
+<p>In the following content, I’ll test the speed of five most common functions of <strong>singly</strong> linked list: <code>appendleft</code>, <code>appendright</code>, <code>popleft</code>, <code>popright</code> and <code>remove</code>. You can check the source code by <a target="_blank" rel="noopener" href="https://github.com/xwu64/compare_python_llist_module/blob/master/compare_llist_lib.py">clickhere</a>. Please feel free to reproduce these tests.</p>
 <p><strong>Hardware</strong>:</p>
 <ul>
 <li>CPU: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz </li>
@@ -172,17 +175,19 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/" data-id="ckeek18ul000sw5dhrht8rzsm" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/" data-id="cknccubk2000yz5dhdnq3bqf3" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/" rel="tag">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
     </footer>
   </div>
   
     
- <script src="/jquery/jquery.min.js"></script>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
   <div id="random_posts">
     <h2>Recommended Posts</h2>
     <div class="random_posts_ul">
@@ -225,6 +230,15 @@
 
     
 <nav id="article-nav">
+  
+    <a href="/2021/04/10/monster-hunters-movie/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          吐槽怪物猎人电影
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/" id="article-nav-older" class="article-nav-link-wrap">
@@ -285,7 +299,7 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2020 Xiaoliang Wu&nbsp;|&nbsp;
+      &copy; 2014 - 2021 Xiaoliang Wu&nbsp;|&nbsp;
       Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
@@ -293,7 +307,9 @@
     </div>
   </div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
     </div>
     <nav id="mobile-nav">
   
@@ -304,7 +320,7 @@
     <a href="/about" class="mobile-nav-link">About</a>
   
 </nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
 <script>
 // Elevator script included on the page, already.
 window.onload = function() {
@@ -368,15 +384,25 @@ window.onload = function() {
   
 
 
- <script src="/js/is.js"></script>
+ 
+<script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
+
 <script src="/js/elevator.js"></script>
+
   </div>
 </body>
 </html>

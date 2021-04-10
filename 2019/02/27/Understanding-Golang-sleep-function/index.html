@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>Understanding Golang sleep() function | Xiaoliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="When we write a simple Golang program test, like 1234567package mainimport &amp;quot;time&amp;quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
-<meta name="keywords" content="English,Golang">
+  <meta name="description" content="When we write a simple Golang program test, like 1234567package mainimport &quot;time&quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Understanding Golang sleep() function">
 <meta property="og:url" content="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/index.html">
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
-<meta property="og:description" content="When we write a simple Golang program test, like 1234567package mainimport &amp;quot;time&amp;quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-29T20:32:18.032Z">
+<meta property="og:description" content="When we write a simple Golang program test, like 1234567package mainimport &quot;time&quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-02-28T05:14:57.000Z">
+<meta property="article:modified_time" content="2019-03-29T20:32:18.000Z">
+<meta property="article:author" content="Xiaoliang Wu">
+<meta property="article:tag" content="English">
+<meta property="article:tag" content="Golang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Understanding Golang sleep() function">
-<meta name="twitter:description" content="When we write a simple Golang program test, like 1234567package mainimport &amp;quot;time&amp;quot;func main() &amp;#123;    time.Sleep(1000 * time.Millisecond)&amp;#125; How Golang to implement these functions? In t">
   
     <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
   
@@ -26,11 +27,13 @@
   
     
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -102,34 +105,36 @@
 <h1 id="Full-article"><a href="#Full-article" class="headerlink" title="Full article"></a>Full article</h1><p>In Linux POSIX (Portable Operating System Interface), <code>sleep</code> function has been implemented. You can try </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sleep 1</span><br></pre></td></tr></table></figure>
 <p>in shell for sleeping one second, which is implemented by linux timer <code>nanosleep</code>.</p>
-<p>However, <a href="https://github.com/golang/go" target="_blank" rel="noopener">Golang</a> does not use timer for its <code>Sleep()</code> directly. If you check code in <code>go/src/time/sleep.go</code>, you’ll find that timer is not implemented in this file. Instead, it is implemented in <code>go/src/runtime/time.go</code>. In the function <code>timeSleep(ns int64)</code>, </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">func timeSleep(ns int64) &#123;</span><br><span class="line">	if ns &lt;= 0 &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	gp := getg()</span><br><span class="line">	t := gp.timer</span><br><span class="line">	if t == nil &#123;</span><br><span class="line">		t = new(timer)</span><br><span class="line">		gp.timer = t</span><br><span class="line">	&#125;</span><br><span class="line">	*t = timer&#123;&#125;</span><br><span class="line">	t.when = nanotime() + ns</span><br><span class="line">	t.f = goroutineReady</span><br><span class="line">	t.arg = gp</span><br><span class="line">	tb := t.assignBucket()</span><br><span class="line">	lock(&amp;tb.lock)</span><br><span class="line">	if !tb.addtimerLocked(t) &#123;</span><br><span class="line">		unlock(&amp;tb.lock)</span><br><span class="line">		badTimer()</span><br><span class="line">	&#125;</span><br><span class="line">	goparkunlock(&amp;tb.lock, waitReasonSleep, traceEvGoSleep, 2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>However, <a target="_blank" rel="noopener" href="https://github.com/golang/go">Golang</a> does not use timer for its <code>Sleep()</code> directly. If you check code in <code>go/src/time/sleep.go</code>, you’ll find that timer is not implemented in this file. Instead, it is implemented in <code>go/src/runtime/time.go</code>. In the function <code>timeSleep(ns int64)</code>, </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">func timeSleep(ns int64) &#123;</span><br><span class="line">	if ns &lt;&#x3D; 0 &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	gp :&#x3D; getg()</span><br><span class="line">	t :&#x3D; gp.timer</span><br><span class="line">	if t &#x3D;&#x3D; nil &#123;</span><br><span class="line">		t &#x3D; new(timer)</span><br><span class="line">		gp.timer &#x3D; t</span><br><span class="line">	&#125;</span><br><span class="line">	*t &#x3D; timer&#123;&#125;</span><br><span class="line">	t.when &#x3D; nanotime() + ns</span><br><span class="line">	t.f &#x3D; goroutineReady</span><br><span class="line">	t.arg &#x3D; gp</span><br><span class="line">	tb :&#x3D; t.assignBucket()</span><br><span class="line">	lock(&amp;tb.lock)</span><br><span class="line">	if !tb.addtimerLocked(t) &#123;</span><br><span class="line">		unlock(&amp;tb.lock)</span><br><span class="line">		badTimer()</span><br><span class="line">	&#125;</span><br><span class="line">	goparkunlock(&amp;tb.lock, waitReasonSleep, traceEvGoSleep, 2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>before line 17, function is creating a timer. In line 17, it locks timer. So, <code>Sleep()</code> sets up timer by locking a resource <code>ns</code> nanoseconds. If we use <code>strace</code> to run a go application,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ strace ./test</span><br><span class="line">...</span><br><span class="line">futex(0x55ca00, FUTEX_WAIT_PRIVATE, 0, NULL) = -1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ strace .&#x2F;test</span><br><span class="line">...</span><br><span class="line">futex(0x55ca00, FUTEX_WAIT_PRIVATE, 0, NULL) &#x3D; -1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p><code>Sleep()</code> call futex function to sleep.</p>
 <p>In the <code>go/src/runtime/lock_futex.go</code>, <code>lock</code> function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">func lock(l *mutex) &#123;</span><br><span class="line">	gp := getg()</span><br><span class="line"></span><br><span class="line">	if gp.m.locks &lt; 0 &#123;</span><br><span class="line">		throw(&quot;runtime·lock: lock count&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	gp.m.locks++</span><br><span class="line"></span><br><span class="line">	// Speculative grab for lock.</span><br><span class="line">	v := atomic.Xchg(key32(&amp;l.key), mutex_locked)</span><br><span class="line">	if v == mutex_unlocked &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// wait is either MUTEX_LOCKED or MUTEX_SLEEPING</span><br><span class="line">	// depending on whether there is a thread sleeping</span><br><span class="line">	// on this mutex. If we ever change l-&gt;key from</span><br><span class="line">	// MUTEX_SLEEPING to some other value, we must be</span><br><span class="line">	// careful to change it back to MUTEX_SLEEPING before</span><br><span class="line">	// returning, to ensure that the sleeping thread gets</span><br><span class="line">	// its wakeup call.</span><br><span class="line">	wait := v</span><br><span class="line"></span><br><span class="line">	// On uniprocessors, no point spinning.</span><br><span class="line">	// On multiprocessors, spin for ACTIVE_SPIN attempts.</span><br><span class="line">	spin := 0</span><br><span class="line">	if ncpu &gt; 1 &#123;</span><br><span class="line">		spin = active_spin</span><br><span class="line">	&#125;</span><br><span class="line">	for &#123;</span><br><span class="line">		// Try for lock, spinning.</span><br><span class="line">		for i := 0; i &lt; spin; i++ &#123;</span><br><span class="line">			for l.key == mutex_unlocked &#123;</span><br><span class="line">				if atomic.Cas(key32(&amp;l.key), mutex_unlocked, wait) &#123;</span><br><span class="line">					return</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			procyield(active_spin_cnt)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// Try for lock, rescheduling.</span><br><span class="line">		for i := 0; i &lt; passive_spin; i++ &#123;</span><br><span class="line">			for l.key == mutex_unlocked &#123;</span><br><span class="line">				if atomic.Cas(key32(&amp;l.key), mutex_unlocked, wait) &#123;</span><br><span class="line">					return</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			osyield()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// Sleep.</span><br><span class="line">		v = atomic.Xchg(key32(&amp;l.key), mutex_sleeping)</span><br><span class="line">		if v == mutex_unlocked &#123;</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		wait = mutex_sleeping</span><br><span class="line">		futexsleep(key32(&amp;l.key), mutex_sleeping, -1)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">func lock(l *mutex) &#123;</span><br><span class="line">	gp :&#x3D; getg()</span><br><span class="line"></span><br><span class="line">	if gp.m.locks &lt; 0 &#123;</span><br><span class="line">		throw(&quot;runtime·lock: lock count&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	gp.m.locks++</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; Speculative grab for lock.</span><br><span class="line">	v :&#x3D; atomic.Xchg(key32(&amp;l.key), mutex_locked)</span><br><span class="line">	if v &#x3D;&#x3D; mutex_unlocked &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; wait is either MUTEX_LOCKED or MUTEX_SLEEPING</span><br><span class="line">	&#x2F;&#x2F; depending on whether there is a thread sleeping</span><br><span class="line">	&#x2F;&#x2F; on this mutex. If we ever change l-&gt;key from</span><br><span class="line">	&#x2F;&#x2F; MUTEX_SLEEPING to some other value, we must be</span><br><span class="line">	&#x2F;&#x2F; careful to change it back to MUTEX_SLEEPING before</span><br><span class="line">	&#x2F;&#x2F; returning, to ensure that the sleeping thread gets</span><br><span class="line">	&#x2F;&#x2F; its wakeup call.</span><br><span class="line">	wait :&#x3D; v</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; On uniprocessors, no point spinning.</span><br><span class="line">	&#x2F;&#x2F; On multiprocessors, spin for ACTIVE_SPIN attempts.</span><br><span class="line">	spin :&#x3D; 0</span><br><span class="line">	if ncpu &gt; 1 &#123;</span><br><span class="line">		spin &#x3D; active_spin</span><br><span class="line">	&#125;</span><br><span class="line">	for &#123;</span><br><span class="line">		&#x2F;&#x2F; Try for lock, spinning.</span><br><span class="line">		for i :&#x3D; 0; i &lt; spin; i++ &#123;</span><br><span class="line">			for l.key &#x3D;&#x3D; mutex_unlocked &#123;</span><br><span class="line">				if atomic.Cas(key32(&amp;l.key), mutex_unlocked, wait) &#123;</span><br><span class="line">					return</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			procyield(active_spin_cnt)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; Try for lock, rescheduling.</span><br><span class="line">		for i :&#x3D; 0; i &lt; passive_spin; i++ &#123;</span><br><span class="line">			for l.key &#x3D;&#x3D; mutex_unlocked &#123;</span><br><span class="line">				if atomic.Cas(key32(&amp;l.key), mutex_unlocked, wait) &#123;</span><br><span class="line">					return</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			osyield()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; Sleep.</span><br><span class="line">		v &#x3D; atomic.Xchg(key32(&amp;l.key), mutex_sleeping)</span><br><span class="line">		if v &#x3D;&#x3D; mutex_unlocked &#123;</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		wait &#x3D; mutex_sleeping</span><br><span class="line">		futexsleep(key32(&amp;l.key), mutex_sleeping, -1)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>line 57 calls <code>futexsleep</code>. </p>
 <p>In <code>go/src/runtime/os_linux.go</code>, function <code>futexsleep</code> is defined as to call futex function of linux. </p>
 <p><strong>So far, we can know that Golang utilize Linux <code>futex</code> function to set timer for <code>Sleep()</code> function.</strong> </p>
-<p>In <a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux</a> , <code>futex</code> is implemented in <code>linux/kernel/futex.c</code>. <code>hrtimer</code> is used as timer of <code>futex</code>. <code>hrtimer</code> is a high-resolution timer compared with the other timers (<code>itimers</code>, <code>POSIX timers</code>,<code>nanosleep</code>,<code>precise in-kernel timing</code>). </p>
+<p>In <a target="_blank" rel="noopener" href="https://github.com/torvalds/linux">Linux</a> , <code>futex</code> is implemented in <code>linux/kernel/futex.c</code>. <code>hrtimer</code> is used as timer of <code>futex</code>. <code>hrtimer</code> is a high-resolution timer compared with the other timers (<code>itimers</code>, <code>POSIX timers</code>,<code>nanosleep</code>,<code>precise in-kernel timing</code>). </p>
 <p><strong>In summary</strong>, when we call <code>Sleep()</code> function in Golang, </p>
 <p>App calls sleep of Golang -&gt; Golang calls futex of Linux -&gt; futex utilizes hrtimer to be timer. </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="ckeek18u10006w5dhzrzdm390" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/" data-id="cknccubjp0009z5dhhk457wtl" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/">Golang</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/" rel="tag">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li></ul>
 
     </footer>
   </div>
   
     
- <script src="/jquery/jquery.min.js"></script>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
   <div id="random_posts">
     <h2>Recommended Posts</h2>
     <div class="random_posts_ul">
@@ -173,7 +178,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/03/15/近AI时代/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/15/%E8%BF%91AI%E6%97%B6%E4%BB%A3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -241,7 +246,7 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2020 Xiaoliang Wu&nbsp;|&nbsp;
+      &copy; 2014 - 2021 Xiaoliang Wu&nbsp;|&nbsp;
       Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
@@ -249,7 +254,9 @@
     </div>
   </div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
     </div>
     <nav id="mobile-nav">
   
@@ -260,7 +267,7 @@
     <a href="/about" class="mobile-nav-link">About</a>
   
 </nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
 <script>
 // Elevator script included on the page, already.
 window.onload = function() {
@@ -324,15 +331,25 @@ window.onload = function() {
   
 
 
- <script src="/js/is.js"></script>
+ 
+<script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
+
 <script src="/js/elevator.js"></script>
+
   </div>
 </body>
 </html>

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>Most Commonly Used Python Data Structures that are NOT built-in | Xiaoliang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="This blog will introduce deque, bisect, defaultdict, Counter, OrderedDict, heapq. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inb">
-<meta name="keywords" content="English,Python,Data Structure,LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Most Commonly Used Python Data Structures that are NOT built-in">
 <meta property="og:url" content="http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/index.html">
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
 <meta property="og:description" content="This blog will introduce deque, bisect, defaultdict, Counter, OrderedDict, heapq. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inb">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-25T01:48:22.191Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-04-25T03:48:22.000Z">
+<meta property="article:modified_time" content="2020-04-25T01:48:22.000Z">
+<meta property="article:author" content="Xiaoliang Wu">
+<meta property="article:tag" content="English">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Data Structure">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Most Commonly Used Python Data Structures that are NOT built-in">
-<meta name="twitter:description" content="This blog will introduce deque, bisect, defaultdict, Counter, OrderedDict, heapq. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inb">
   
     <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
   
@@ -26,11 +29,13 @@
   
     
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -93,70 +98,72 @@
       
         <!-- Table of Contents -->
         
-        <p>This blog will introduce <strong>deque</strong>, <strong>bisect</strong>, <strong>defaultdict</strong>, <strong>Counter</strong>, <strong>OrderedDict</strong>, <strong>heapq</strong>. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inbuilt data structures (Lists, Dictionary, Tuple, and Sets) can be learned from <a href="https://www.geeksforgeeks.org/inbuilt-data-structures-python/" target="_blank" rel="noopener">GeeksforGeeks</a>.</p>
+        <p>This blog will introduce <strong>deque</strong>, <strong>bisect</strong>, <strong>defaultdict</strong>, <strong>Counter</strong>, <strong>OrderedDict</strong>, <strong>heapq</strong>. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inbuilt data structures (Lists, Dictionary, Tuple, and Sets) can be learned from <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/inbuilt-data-structures-python/">GeeksforGeeks</a>.</p>
 <p>Of course, this blog won’t cover all useful functions or data structures. I’ll update this article when I find more useful data structures. </p>
 <a id="more"></a>
 <p>The best way to understand these data structures is to read official documents. You can access these websites by click titles. However, to avoid people being overwhelmed by massive information, this article will only cover the most significant knowledge. </p>
-<h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a><a href="https://docs.python.org/3/library/collections.html#collections.deque" target="_blank" rel="noopener">deque</a></h2><p>“deque” is the abbreviation of “double-ended queue”<a href="https://en.wikipedia.org/wiki/Double-ended_queue" target="_blank" rel="noopener">[wikipedia]</a>. The queue operations (push/pop) can be operated on both the head and tail of “deque” list. The time complexity of operations is O(1).  </p>
+<h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/collections.html#collections.deque">deque</a></h2><p>“deque” is the abbreviation of “double-ended queue”<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Double-ended_queue">[wikipedia]</a>. The queue operations (push/pop) can be operated on both the head and tail of “deque” list. The time complexity of operations is O(1).  </p>
 <p>You should import <code>collections</code> library to use <code>deque</code>. The functions of deque are shown below. </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([iterable[, maxlen]]) <span class="comment"># create deque object</span></span><br><span class="line">queue.append(val)  <span class="comment"># Add x to the right side of the deque</span></span><br><span class="line">queue.appendleft(val)  <span class="comment"># Add x to the left side of the deque</span></span><br><span class="line">queue.clear()  <span class="comment"># Remove all elements from the deque leaving it with length 0</span></span><br><span class="line">queue.count(val)  <span class="comment"># Count the number of deque elements equal to x</span></span><br><span class="line">queue.copy() <span class="comment"># Create a shallow copy of the deque</span></span><br><span class="line">queue.extend(iterable)  <span class="comment"># Extend the right side of the deque </span></span><br><span class="line">queue.extendleft(iterable)  <span class="comment">#  Extend the left side of the deque </span></span><br><span class="line">queue.insert(i, x)  <span class="comment"># Insert x into the deque at position i</span></span><br><span class="line">queue.index(x[, start[, stop]]) <span class="comment"># Return the position of x in the deque</span></span><br><span class="line">queue.pop()  <span class="comment"># Remove and return an element from the right side of the deque</span></span><br><span class="line">queue.popleft()  <span class="comment"># Remove and return an element from the left side of the deque</span></span><br><span class="line">queue.reverse()  <span class="comment"># Reverse the elements of the deque in-place and then return None</span></span><br><span class="line">queue.remove(val)  <span class="comment"># Remove the first occurrence of value</span></span><br><span class="line">queue.rotate(n=<span class="number">1</span>)  <span class="comment"># Rotate the deque n steps to the right</span></span><br></pre></td></tr></table></figure>
 <p>These functions are easy to understand from their name. If you learned Lists, all of the above functions can be implemented by List. So, <strong>why we need deque?</strong> </p>
 <p>The document explains it in below. </p>
 <blockquote>
-<p>Though <a href="https://docs.python.org/3/library/stdtypes.html#list" target="_blank" rel="noopener"><code>list</code></a> objects support similar operations, they are optimized for fast fixed-length operations and incur O(n) memory movement costs for <code>pop(0)</code> and <code>insert(0, v)</code> operations which change both the size and position of the underlying data representation.</p>
+<p>Though <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/stdtypes.html#list"><code>list</code></a> objects support similar operations, they are optimized for fast fixed-length operations and incur O(n) memory movement costs for <code>pop(0)</code> and <code>insert(0, v)</code> operations which change both the size and position of the underlying data representation.</p>
 </blockquote>
 <p>It seems like there are some optimizations in deque for <code>appendleft</code> and <code>popleft</code> operations. Let’s do some tests!</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Test1: list.pop(0)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">()</span>:</span></span><br><span class="line">  	l = list(range(<span class="number">1</span>&lt;&lt;<span class="number">19</span>))</span><br><span class="line">    tick = time.time()</span><br><span class="line">    <span class="keyword">while</span> l:</span><br><span class="line">        l.pop(<span class="number">0</span>)</span><br><span class="line">    print(<span class="string">"f1 time: %.2f sec"</span>%( time.time() - tick))</span><br><span class="line">test1() </span><br><span class="line"><span class="comment"># output: f1 time: 128.42 sec</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Test2: deque.popleft()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">()</span>:</span></span><br><span class="line">    dq = deque(range(<span class="number">1</span>&lt;&lt;<span class="number">19</span>))</span><br><span class="line">    tick = time.time()</span><br><span class="line">    <span class="keyword">while</span> dq:</span><br><span class="line">        dq.popleft()</span><br><span class="line">    print(<span class="string">"f2 time: %.2f sec"</span>%( time.time() - tick))</span><br><span class="line">test2()</span><br><span class="line"><span class="comment"># output: f2 time: 0.05 sec</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Test1: list.pop(0)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span>():</span></span><br><span class="line">  	l = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>&lt;&lt;<span class="number">19</span>))</span><br><span class="line">    tick = time.time()</span><br><span class="line">    <span class="keyword">while</span> l:</span><br><span class="line">        l.pop(<span class="number">0</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f1 time: %.2f sec&quot;</span>%( time.time() - tick))</span><br><span class="line">test1() </span><br><span class="line"><span class="comment"># output: f1 time: 128.42 sec</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Test2: deque.popleft()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span>():</span></span><br><span class="line">    dq = deque(<span class="built_in">range</span>(<span class="number">1</span>&lt;&lt;<span class="number">19</span>))</span><br><span class="line">    tick = time.time()</span><br><span class="line">    <span class="keyword">while</span> dq:</span><br><span class="line">        dq.popleft()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f2 time: %.2f sec&quot;</span>%( time.time() - tick))</span><br><span class="line">test2()</span><br><span class="line"><span class="comment"># output: f2 time: 0.05 sec</span></span><br></pre></td></tr></table></figure>
 <p><strong>128.42 sec</strong> VS <strong>0.05 sec</strong> !!!</p>
 <p>Now, you know the difference. You can paractice it by LeetCode shown below.</p>
-<p><strong>Practice:</strong>  <a href="https://LeetCode.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">LeetCode 102. Binary Tree Level Order Traversal</a></p>
-<h2 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a><a href="https://docs.python.org/3.8/library/collections.html#collections.Counter" target="_blank" rel="noopener">Counter</a></h2><p><code>Counter</code> is another class in the <code>collections</code> library. A <code>Counter</code> is a <code>dict</code> subclass for counting hashable objects. Therefore, you can call all functions in <code>dict</code>. Besides, specific functions for <code>Counter</code> are listed below.</p>
+<p><strong>Practice:</strong>  <a target="_blank" rel="noopener" href="https://LeetCode.com/problems/binary-tree-level-order-traversal/">LeetCode 102. Binary Tree Level Order Traversal</a></p>
+<h2 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3.8/library/collections.html#collections.Counter">Counter</a></h2><p><code>Counter</code> is another class in the <code>collections</code> library. A <code>Counter</code> is a <code>dict</code> subclass for counting hashable objects. Therefore, you can call all functions in <code>dict</code>. Besides, specific functions for <code>Counter</code> are listed below.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">cnt = Counter([iterable-<span class="keyword">or</span>-mapping])</span><br><span class="line">cnt.elements()  <span class="comment"># Return an iterator over elements repeating each as many times as its count </span></span><br><span class="line">cnt.most_common([n])  <span class="comment"># Return a list of the n most common elements and their counts from the most common to the least</span></span><br><span class="line">cnt.subtract([iterable-<span class="keyword">or</span>-mapping])  <span class="comment"># Elements are subtracted from an iterable or from another mapping</span></span><br><span class="line">cnt.update([iterable-<span class="keyword">or</span>-mapping])  <span class="comment"># Elements are counted from an iterable or added-in from another mapping</span></span><br></pre></td></tr></table></figure>
-<p><strong>Practice</strong>: <a href="https://LeetCode.com/problems/majority-element/" target="_blank" rel="noopener">LeetCode 169. Majority Element</a> ; <a href="https://LeetCode.com/problems/valid-anagram/" target="_blank" rel="noopener">LeetCode 242. Valid Anagram</a></p>
-<h2 id="OrderedDict"><a href="#OrderedDict" class="headerlink" title="OrderedDict"></a><a href="https://docs.python.org/3.8/library/collections.html#collections.OrderedDict" target="_blank" rel="noopener">OrderedDict</a></h2><p><code>OrderedDict</code> is a dictionary that remembers insertion order. Because it’s a <code>dict</code> subclass, all of the functions of <code>dict</code> can be used in <code>OrderedDict</code> either. Unlike the unsorted keys in <code>dict</code>, keys of <code>OrderedDict</code> is sorted by insertion order from early to late. Specific functions are shown below. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line">odd = OrderedDict()</span><br><span class="line">odd.popitem(last=<span class="keyword">True</span>) <span class="comment"># Return and Remove a pair in LIFO (FIFO) order if last is true (false)</span></span><br><span class="line">odd.move_to_end(key, last=<span class="keyword">True</span>) <span class="comment"># Move an existing key to either end of an ordered dictionary</span></span><br></pre></td></tr></table></figure>
-<p><strong>Practice</strong>: <a href="https://leetcode.com/problems/lru-cache/" target="_blank" rel="noopener">LeetCode 146. LRU Cache</a></p>
-<h2 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a><a href="https://docs.python.org/3.8/library/collections.html#collections.defaultdict" target="_blank" rel="noopener">defaultdict</a></h2><p><code>defaultdict</code> is a <code>dict</code> subclass that calls a factory function to supply missing values. <code>dict</code> class will raise <code>KeyError</code> exception if an unexistence key is used. To avoid such an error, we can use <code>defaultdict</code>. The example of the class is shown below.</p>
+<p><strong>Practice</strong>: <a target="_blank" rel="noopener" href="https://LeetCode.com/problems/majority-element/">LeetCode 169. Majority Element</a> ; <a target="_blank" rel="noopener" href="https://LeetCode.com/problems/valid-anagram/">LeetCode 242. Valid Anagram</a></p>
+<h2 id="OrderedDict"><a href="#OrderedDict" class="headerlink" title="OrderedDict"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3.8/library/collections.html#collections.OrderedDict">OrderedDict</a></h2><p><code>OrderedDict</code> is a dictionary that remembers insertion order. Because it’s a <code>dict</code> subclass, all of the functions of <code>dict</code> can be used in <code>OrderedDict</code> either. Unlike the unsorted keys in <code>dict</code>, keys of <code>OrderedDict</code> is sorted by insertion order from early to late. Specific functions are shown below. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line">odd = OrderedDict()</span><br><span class="line">odd.popitem(last=<span class="literal">True</span>) <span class="comment"># Return and Remove a pair in LIFO (FIFO) order if last is true (false)</span></span><br><span class="line">odd.move_to_end(key, last=<span class="literal">True</span>) <span class="comment"># Move an existing key to either end of an ordered dictionary</span></span><br></pre></td></tr></table></figure>
+<p><strong>Practice</strong>: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/lru-cache/">LeetCode 146. LRU Cache</a></p>
+<h2 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3.8/library/collections.html#collections.defaultdict">defaultdict</a></h2><p><code>defaultdict</code> is a <code>dict</code> subclass that calls a factory function to supply missing values. <code>dict</code> class will raise <code>KeyError</code> exception if an unexistence key is used. To avoid such an error, we can use <code>defaultdict</code>. The example of the class is shown below.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">d = defaultdict(<span class="keyword">lambda</span> : value) <span class="comment"># Value will be returned if key cannot be found in the dictionary</span></span><br></pre></td></tr></table></figure>
-<p><strong>Practice</strong>: <a href="https://leetcode.com/problems/word-search-ii/" target="_blank" rel="noopener">LeetCode 212. Word Search II</a></p>
-<h2 id="heapq"><a href="#heapq" class="headerlink" title="heapq"></a><a href="https://docs.python.org/3/library/heapq.html" target="_blank" rel="noopener">heapq</a></h2><p>“<code>heapq</code>“ is an implementation of the heap queue. The knowledge of heap can be found in the <a href="https://www.geeksforgeeks.org/heap-data-structure/" target="_blank" rel="noopener">GeeksforGeeks</a> and <a href="https://en.wikipedia.org/wiki/Heap_(data_structure" target="_blank" rel="noopener">Wikipedia</a>). Cited from GeeksforGeeks</p>
+<p><strong>Practice</strong>: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/word-search-ii/">LeetCode 212. Word Search II</a></p>
+<h2 id="heapq"><a href="#heapq" class="headerlink" title="heapq"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/heapq.html">heapq</a></h2><p>“<code>heapq</code>“ is an implementation of the heap queue. The knowledge of heap can be found in the <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/heap-data-structure/">GeeksforGeeks</a> and <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Heap_(data_structure">Wikipedia</a>). Cited from GeeksforGeeks</p>
 <blockquote>
 <p><strong>Max-Heap</strong> (<strong>Min-Heap</strong>): In a Max-Heap (Min-Heap) the key present at the root node must be greatest (minimum) among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.</p>
 </blockquote>
 <p>The basic operations of heap include build empty heap, insert new element, get the top element, delete the top element. The time complexity of operations are O(n), O(log n), O(1), O(log n) respectively. </p>
-<p>The implementation of <code>heapq</code> is shown below (cited from the <a href="https://docs.python.org/3/library/heapq.html" target="_blank" rel="noopener">official document</a>).</p>
+<p>The implementation of <code>heapq</code> is shown below (cited from the <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/heapq.html">official document</a>).</p>
 <blockquote>
 <p>This implementation uses arrays for which <code>heap[k] &lt;= heap[2*k+1]</code> and <code>heap[k] &lt;= heap[2*k+2]</code> for all <em>k</em>, counting elements from zero. For the sake of comparison, non-existing elements are considered to be infinite. The interesting property of a heap is that its smallest element is always the root, <code>heap[0]</code>.</p>
 </blockquote>
 <p>There are some examples for <code>heapq</code> functions.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heap = []  <span class="comment"># use a list to store elements</span></span><br><span class="line">heapq.heappush(heap,item)  <span class="comment"># Push the value item onto the heap</span></span><br><span class="line">heapq.heappop(heap)  <span class="comment"># Pop and return the smallest item from the heap</span></span><br><span class="line">heapq.heappushpop(heap, item) <span class="comment"># Push item on the heap, then pop and return the smallest item from the heap</span></span><br><span class="line">item = heap[<span class="number">0</span>]  <span class="comment"># Access the smallest item from the heap</span></span><br><span class="line">heapq.heapify(x)  <span class="comment"># Transform list x into a heap, in-place, in linear time</span></span><br><span class="line">item = heapq.heapreplace(heap,item)  <span class="comment"># Pop and return the smallest item from the heap, and also push the new item</span></span><br><span class="line">heapq.merge(*iterables, key=<span class="keyword">None</span>, reverse=<span class="keyword">False</span>)  <span class="comment"># Merge multiple sorted inputs into a single sorted output</span></span><br><span class="line">heapq.nlargest(n, iterable, key=<span class="keyword">None</span>)  <span class="comment"># Return a list with the n largest elements</span></span><br><span class="line">heapq.nsmallest(n, iterable, key=<span class="keyword">None</span>)  <span class="comment"># Return a list with the n smallest elements</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heap = []  <span class="comment"># use a list to store elements</span></span><br><span class="line">heapq.heappush(heap,item)  <span class="comment"># Push the value item onto the heap</span></span><br><span class="line">heapq.heappop(heap)  <span class="comment"># Pop and return the smallest item from the heap</span></span><br><span class="line">heapq.heappushpop(heap, item) <span class="comment"># Push item on the heap, then pop and return the smallest item from the heap</span></span><br><span class="line">item = heap[<span class="number">0</span>]  <span class="comment"># Access the smallest item from the heap</span></span><br><span class="line">heapq.heapify(x)  <span class="comment"># Transform list x into a heap, in-place, in linear time</span></span><br><span class="line">item = heapq.heapreplace(heap,item)  <span class="comment"># Pop and return the smallest item from the heap, and also push the new item</span></span><br><span class="line">heapq.merge(*iterables, key=<span class="literal">None</span>, reverse=<span class="literal">False</span>)  <span class="comment"># Merge multiple sorted inputs into a single sorted output</span></span><br><span class="line">heapq.nlargest(n, iterable, key=<span class="literal">None</span>)  <span class="comment"># Return a list with the n largest elements</span></span><br><span class="line">heapq.nsmallest(n, iterable, key=<span class="literal">None</span>)  <span class="comment"># Return a list with the n smallest elements </span></span><br></pre></td></tr></table></figure>
 <p>You can also learn the use case of <code>heapq</code>, like the implementation of priority queue and theory in the official document.</p>
-<p><strong>Practice</strong>: <a href="https://leetcode.com/problems/kth-largest-element-in-a-stream/" target="_blank" rel="noopener">LeetCode 703. Kth Largest Element in a Stream </a></p>
-<h2 id="bisect"><a href="#bisect" class="headerlink" title="bisect"></a><a href="https://docs.python.org/3/library/bisect.html" target="_blank" rel="noopener">bisect</a></h2><p>Citation from <a href="https://docs.python.org/3/library/bisect.html" target="_blank" rel="noopener">official document</a></p>
+<p><strong>Practice</strong>: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-a-stream/">LeetCode 703. Kth Largest Element in a Stream </a></p>
+<h2 id="bisect"><a href="#bisect" class="headerlink" title="bisect"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/bisect.html">bisect</a></h2><p>Citation from <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/bisect.html">official document</a></p>
 <blockquote>
 <p>This module provides support for maintaining a list in sorted order without having to sort the list after each insertion.</p>
 </blockquote>
 <p>Bisection method is one of the most commonly used methods. For searching an element in the sorted array, the time complexity of bisection searching is O(log n). Even if the implementation of bisection is simple, implementing it everywhere is cumbersome and inelegant. </p>
 <p>The <code>bisect</code> library provides a standard way to do it. Functions of <code>bisect</code> are shown below. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">bisect.bisect_left(a, x, lo=<span class="number">0</span>, hi=len(a))  <span class="comment"># Return the insertion point for x in a to maintain sorted order. If x is already present in a, return the left most position</span></span><br><span class="line">bisect.bisect_right(a, x, lo=<span class="number">0</span>, hi=len(a))  <span class="comment"># Return the insertion point for x in a to maintain sorted order. If x is already present in a, return the right most position</span></span><br><span class="line">bisect.bisect(a, x, lo=<span class="number">0</span>, hi=len(a))  <span class="comment"># same as bisect_right</span></span><br><span class="line">bisect.insort_left(a, x, lo=<span class="number">0</span>, hi=len(a))  <span class="comment"># Insert x in a in sorted order</span></span><br><span class="line">bisect.insort_right(a, x, lo=<span class="number">0</span>, hi=len(a)) </span><br><span class="line">bisect.insort(a, x, lo=<span class="number">0</span>, hi=len(a))  <span class="comment"># same as insort_right</span></span><br></pre></td></tr></table></figure>
-<p>Some interesting use cases of <code>bisect</code>  are introduced in the <a href="https://docs.python.org/3/library/bisect.html" target="_blank" rel="noopener">official document</a>.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a href="https://zhuanlan.zhihu.com/p/75557421" target="_blank" rel="noopener">python 在LeetCode中常用的数据结构</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">bisect.bisect_left(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))  <span class="comment"># Return the insertion point for x in a to maintain sorted order. If x is already present in a, return the left most position</span></span><br><span class="line">bisect.bisect_right(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))  <span class="comment"># Return the insertion point for x in a to maintain sorted order. If x is already present in a, return the right most position</span></span><br><span class="line">bisect.bisect(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))  <span class="comment"># same as bisect_right</span></span><br><span class="line">bisect.insort_left(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))  <span class="comment"># Insert x in a in sorted order</span></span><br><span class="line">bisect.insort_right(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a)) </span><br><span class="line">bisect.insort(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))  <span class="comment"># same as insort_right</span></span><br></pre></td></tr></table></figure>
+<p>Some interesting use cases of <code>bisect</code>  are introduced in the <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/bisect.html">official document</a>.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75557421">python 在LeetCode中常用的数据结构</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/" data-id="ckeek18up000uw5dhgxl0kyyc" class="article-share-link">Share</a>
+      <a data-url="http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/" data-id="cknccubjz000wz5dh767zb0no" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/" rel="tag">Data Structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/" rel="tag">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
     </footer>
   </div>
   
     
- <script src="/jquery/jquery.min.js"></script>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
   <div id="random_posts">
     <h2>Recommended Posts</h2>
     <div class="random_posts_ul">
@@ -268,7 +275,7 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2020 Xiaoliang Wu&nbsp;|&nbsp;
+      &copy; 2014 - 2021 Xiaoliang Wu&nbsp;|&nbsp;
       Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
@@ -276,7 +283,9 @@
     </div>
   </div>
 </footer>
- <script src="/jquery/jquery.min.js"></script>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
     </div>
     <nav id="mobile-nav">
   
@@ -287,7 +296,7 @@
     <a href="/about" class="mobile-nav-link">About</a>
   
 </nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png">
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
 <script>
 // Elevator script included on the page, already.
 window.onload = function() {
@@ -351,15 +360,25 @@ window.onload = function() {
   
 
 
- <script src="/js/is.js"></script>
+ 
+<script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
+
 <script src="/js/elevator.js"></script>
+
   </div>
 </body>
 </html>

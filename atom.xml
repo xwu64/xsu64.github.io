@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2020-08-28T18:13:24.674Z</updated>
+  <updated>2021-04-10T23:07:42.442Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>吐槽怪物猎人电影</title>
+    <link href="http://xwu64.github.io/2021/04/10/monster-hunters-movie/"/>
+    <id>http://xwu64.github.io/2021/04/10/monster-hunters-movie/</id>
+    <published>2021-04-10T23:07:42.000Z</published>
+    <updated>2021-04-10T23:07:42.442Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近沉迷 Monster Hunter Rise
+        
+      
+    
+    </summary>
+    
+    
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Movie" scheme="http://xwu64.github.io/tags/Movie/"/>
+    
+      <category term="怪物猎人" scheme="http://xwu64.github.io/tags/%E6%80%AA%E7%89%A9%E7%8C%8E%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Comparison of Python Linked List Modules llist, pyllist, cllist</title>
     <link href="http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/"/>
     <id>http://xwu64.github.io/2020/08/28/Comparison-of-Python-Linked-List-Modules-llist-pyllist-cllist/</id>
     <published>2020-08-28T18:07:03.000Z</published>
-    <updated>2020-08-28T18:13:24.674Z</updated>
+    <updated>2020-08-28T18:13:24.000Z</updated>
     
     <summary type="html">
     
@@ -43,11 +71,11 @@
     <link href="http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/"/>
     <id>http://xwu64.github.io/2020/04/24/Most-Commonly-Used-Python-Data-Structures-that-are-NOT-built-in/</id>
     <published>2020-04-25T03:48:22.000Z</published>
-    <updated>2020-04-25T01:48:22.191Z</updated>
+    <updated>2020-04-25T01:48:22.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;This blog will introduce &lt;strong&gt;deque&lt;/strong&gt;, &lt;strong&gt;bisect&lt;/strong&gt;, &lt;strong&gt;defaultdict&lt;/strong&gt;, &lt;strong&gt;Counter&lt;/strong&gt;, &lt;strong&gt;OrderedDict&lt;/strong&gt;, &lt;strong&gt;heapq&lt;/strong&gt;. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inbuilt data structures (Lists, Dictionary, Tuple, and Sets) can be learned from &lt;a href=&quot;https://www.geeksforgeeks.org/inbuilt-data-structures-python/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GeeksforGeeks&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;This blog will introduce &lt;strong&gt;deque&lt;/strong&gt;, &lt;strong&gt;bisect&lt;/strong&gt;, &lt;strong&gt;defaultdict&lt;/strong&gt;, &lt;strong&gt;Counter&lt;/strong&gt;, &lt;strong&gt;OrderedDict&lt;/strong&gt;, &lt;strong&gt;heapq&lt;/strong&gt;. For every data structure, I’ll introduce their basic knowledge, example code and LeetCode problems. The four basic inbuilt data structures (Lists, Dictionary, Tuple, and Sets) can be learned from &lt;a href=&quot;https://www.geeksforgeeks.org/inbuilt-data-structures-python/&quot;&gt;GeeksforGeeks&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Of course, this blog won’t cover all useful functions or data structures. I’ll update this article when I find more useful data structures. &lt;/p&gt;
     
     </summary>
@@ -68,14 +96,14 @@
     <link href="http://xwu64.github.io/2020/03/15/plot-graph-to-show-ideas/"/>
     <id>http://xwu64.github.io/2020/03/15/plot-graph-to-show-ideas/</id>
     <published>2020-03-16T06:18:03.000Z</published>
-    <updated>2020-03-16T04:24:28.598Z</updated>
+    <updated>2020-03-16T04:24:28.000Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;When we do experiments to observe or demonstrate some ideas, one graph can produce a correct intuition if you use a proper graph. For example, if you want to observe the distribution of data, the bar or line graphs are not sufficient to show this information. Because they can only show the average and variance of data. If the data is plotted by the violin or CDF (cumulative distribution function), they will show the distribution of data in a better way. &lt;/p&gt;
 &lt;p&gt;Of course, how to visualize data is not easy work and I’m not a profession here. I just want to introduce 1) how to plot some general graphs by Python3 (Matplotlib package); 2) these graphs are suited to which situations. &lt;/p&gt;
-&lt;p&gt;If you know better references, please feel free to send them to me by Email. (&lt;a href=&quot;mailto:zurielibra@gmail.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;zurielibra@gmail.com&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;More examples of data visualization can be found on the &lt;a href=&quot;https://matplotlib.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;website&lt;/a&gt; of Matplotlib. &lt;/p&gt;
+&lt;p&gt;If you know better references, please feel free to send them to me by Email. (&lt;a href=&quot;mailto:zurielibra@gmail.com&quot;&gt;zurielibra@gmail.com&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;More examples of data visualization can be found on the &lt;a href=&quot;https://matplotlib.org/&quot;&gt;website&lt;/a&gt; of Matplotlib. &lt;/p&gt;
     
     </summary>
     
@@ -93,7 +121,7 @@
     <link href="http://xwu64.github.io/2020/01/24/%E5%B7%B1%E4%BA%A5%E9%99%A4%E5%A4%95/"/>
     <id>http://xwu64.github.io/2020/01/24/己亥除夕/</id>
     <published>2020-01-25T04:59:04.000Z</published>
-    <updated>2020-01-29T04:28:52.063Z</updated>
+    <updated>2020-01-29T04:28:52.000Z</updated>
     
     <summary type="html">
     
@@ -121,7 +149,7 @@
     <link href="http://xwu64.github.io/2019/12/12/Run-Multithread-Python-Program-Parallel/"/>
     <id>http://xwu64.github.io/2019/12/12/Run-Multithread-Python-Program-Parallel/</id>
     <published>2019-12-12T21:42:01.000Z</published>
-    <updated>2019-12-12T19:42:01.795Z</updated>
+    <updated>2019-12-12T19:42:01.000Z</updated>
     
     <summary type="html">
     
@@ -131,9 +159,9 @@
     </summary>
     
     
-      <category term="Python" scheme="http://xwu64.github.io/tags/Python/"/>
-    
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Python" scheme="http://xwu64.github.io/tags/Python/"/>
     
       <category term="GIL" scheme="http://xwu64.github.io/tags/GIL/"/>
     
@@ -150,7 +178,7 @@
     <link href="http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/"/>
     <id>http://xwu64.github.io/2019/11/16/Create-New-User-with-Temporary-Password-on-Linux/</id>
     <published>2019-11-17T00:41:18.000Z</published>
-    <updated>2019-11-16T22:41:18.306Z</updated>
+    <updated>2019-11-16T22:41:18.000Z</updated>
     
     <summary type="html">
     
@@ -185,11 +213,11 @@
     <link href="http://xwu64.github.io/2019/11/08/Coffee-Shop-Chicago-1/"/>
     <id>http://xwu64.github.io/2019/11/08/Coffee-Shop-Chicago-1/</id>
     <published>2019-11-09T05:46:18.000Z</published>
-    <updated>2019-11-09T03:52:53.463Z</updated>
+    <updated>2019-11-09T03:52:53.000Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JACKALOPE-COFFEE-amp-TEA&quot;&gt;&lt;a href=&quot;#JACKALOPE-COFFEE-amp-TEA&quot; class=&quot;headerlink&quot; title=&quot;JACKALOPE COFFEE &amp;amp; TEA&quot;&gt;&lt;/a&gt;JACKALOPE COFFEE &amp;amp; TEA&lt;/h1&gt;&lt;p&gt;Photos at Jackalope coffee &amp;amp; tea. Very nice environment. The address of shop locates at &lt;a href=&quot;https://goo.gl/maps/6HRKW9iUxH34ehHN8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;755 W 32nd St, Chicago, IL 60616&lt;/a&gt;. &lt;/p&gt;
+      &lt;h1 id=&quot;JACKALOPE-COFFEE-amp-TEA&quot;&gt;&lt;a href=&quot;#JACKALOPE-COFFEE-amp-TEA&quot; class=&quot;headerlink&quot; title=&quot;JACKALOPE COFFEE &amp;amp; TEA&quot;&gt;&lt;/a&gt;JACKALOPE COFFEE &amp;amp; TEA&lt;/h1&gt;&lt;p&gt;Photos at Jackalope coffee &amp;amp; tea. Very nice environment. The address of shop locates at &lt;a href=&quot;https://goo.gl/maps/6HRKW9iUxH34ehHN8&quot;&gt;755 W 32nd St, Chicago, IL 60616&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6gy1g84hecno5ij30sg0lcagj.jpg&quot; alt=&quot;Cashier desk&quot;&gt;&lt;/p&gt;
     
     </summary>
@@ -206,7 +234,7 @@
     <link href="http://xwu64.github.io/2019/08/13/996-996/"/>
     <id>http://xwu64.github.io/2019/08/13/996-996/</id>
     <published>2019-08-14T04:07:24.000Z</published>
-    <updated>2019-08-14T02:55:39.237Z</updated>
+    <updated>2019-08-14T02:55:39.000Z</updated>
     
     <summary type="html">
     
@@ -234,7 +262,7 @@
     <link href="http://xwu64.github.io/2019/06/23/%E4%BA%BA%E7%B1%BB%E6%9C%AA%E6%9D%A5%E7%96%86%E5%9F%9F%E5%B1%95%E6%9C%9B/"/>
     <id>http://xwu64.github.io/2019/06/23/人类未来疆域展望/</id>
     <published>2019-06-24T01:27:01.000Z</published>
-    <updated>2019-06-23T23:40:51.132Z</updated>
+    <updated>2019-06-23T23:40:51.000Z</updated>
     
     <summary type="html">
     
@@ -254,7 +282,7 @@
     <link href="http://xwu64.github.io/2019/06/13/ACM-PADS-poster/"/>
     <id>http://xwu64.github.io/2019/06/13/ACM-PADS-poster/</id>
     <published>2019-06-14T05:27:06.000Z</published>
-    <updated>2019-06-14T03:38:58.817Z</updated>
+    <updated>2019-06-14T03:38:58.000Z</updated>
     
     <summary type="html">
     
@@ -263,7 +291,7 @@
         
         
           &lt;p&gt;You can download PDF version of poster by &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://drive.google.com/open?id=10--SnwxmsJIAVM5Sd-nI7DYMHfnngZTY&quot;
+&lt;p&gt;&lt;a
         
       
     
@@ -285,11 +313,11 @@
     <link href="http://xwu64.github.io/2019/04/10/type3/"/>
     <id>http://xwu64.github.io/2019/04/10/type3/</id>
     <published>2019-04-10T18:10:50.000Z</published>
-    <updated>2019-04-10T16:10:50.188Z</updated>
+    <updated>2019-04-10T16:10:50.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;This Blog is written by Chinese. If you prefer a guide written by english, you can visit  &lt;a href=&quot;http://phyletica.org/matplotlib-fonts/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jamie Oaks’s Blog&lt;/a&gt;. &lt;/p&gt;
+      &lt;p&gt;This Blog is written by Chinese. If you prefer a guide written by english, you can visit  &lt;a href=&quot;http://phyletica.org/matplotlib-fonts/&quot;&gt;Jamie Oaks’s Blog&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;最近提交论文后，收到了 ACM 的要求：将 “type 3 fonts” 变为 “type 1 fonts”。查了一下后，发现大多数论文都不能使用 “type 3 fonts”。因此记录一下这回的解决方案，免得下回四处 Google 。&lt;/p&gt;
     
     </summary>
@@ -308,7 +336,7 @@
     <link href="http://xwu64.github.io/2019/04/03/Technically-Understanding-EOS/"/>
     <id>http://xwu64.github.io/2019/04/03/Technically-Understanding-EOS/</id>
     <published>2019-04-04T04:04:08.000Z</published>
-    <updated>2019-04-04T02:04:08.528Z</updated>
+    <updated>2019-04-04T02:04:08.000Z</updated>
     
     <summary type="html">
     
@@ -337,7 +365,7 @@
     <link href="http://xwu64.github.io/2019/03/20/%E5%AD%97%E5%85%B8%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B2%A1%E6%9C%89%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%9F/"/>
     <id>http://xwu64.github.io/2019/03/20/字典为什么没有开源项目？/</id>
     <published>2019-03-20T15:32:36.000Z</published>
-    <updated>2019-03-20T15:39:05.646Z</updated>
+    <updated>2019-03-20T15:39:05.000Z</updated>
     
     <summary type="html">
     
@@ -363,7 +391,7 @@
     <link href="http://xwu64.github.io/2019/03/15/%E8%BF%91AI%E6%97%B6%E4%BB%A3/"/>
     <id>http://xwu64.github.io/2019/03/15/近AI时代/</id>
     <published>2019-03-16T03:34:19.000Z</published>
-    <updated>2019-04-18T01:03:58.716Z</updated>
+    <updated>2019-04-18T01:03:58.000Z</updated>
     
     <summary type="html">
     
@@ -385,7 +413,7 @@
     <link href="http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/"/>
     <id>http://xwu64.github.io/2019/02/27/Understanding-Golang-sleep-function/</id>
     <published>2019-02-28T05:14:57.000Z</published>
-    <updated>2019-03-29T20:32:18.032Z</updated>
+    <updated>2019-03-29T20:32:18.000Z</updated>
     
     <summary type="html">
     
@@ -408,13 +436,13 @@
     <link href="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/"/>
     <id>http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/</id>
     <published>2019-02-20T06:08:10.000Z</published>
-    <updated>2019-03-29T20:37:25.172Z</updated>
+    <updated>2019-03-29T20:37:25.000Z</updated>
     
     <summary type="html">
     
       &lt;ol&gt;
 &lt;li&gt;Create repository&lt;blockquote&gt;
-&lt;p&gt;Follow instructions in &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt; to create a new repository&lt;/p&gt;
+&lt;p&gt;Follow instructions in &lt;a href=&quot;https://pages.github.com/&quot;&gt;github&lt;/a&gt; to create a new repository&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -424,13 +452,13 @@
     
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
-    
       <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
     
       <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
     
       <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
+    
+      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
@@ -439,7 +467,7 @@
     <link href="http://xwu64.github.io/2019/02/17/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E9%9C%80%E8%A6%81%E5%8D%9A%E5%AE%A2/"/>
     <id>http://xwu64.github.io/2019/02/17/为什么我需要博客/</id>
     <published>2019-02-18T06:38:14.000Z</published>
-    <updated>2019-03-29T20:25:07.805Z</updated>
+    <updated>2019-03-29T20:25:07.000Z</updated>
     
     <summary type="html">
     
