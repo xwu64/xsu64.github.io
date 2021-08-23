@@ -12,11 +12,11 @@
 <meta property="og:site_name" content="Xiaoliang&#39;s Blog">
 <meta property="og:description" content="这几天尝试用 Python3 写一个多线程应用，发现了一个之前一直不知道的语言特性：GIL (Global Interpreter Lock) 全局解释器锁。 先写结论：GIL 的存在让 Python 的多线程应用只能实现并发，而不能实现并行。如果想实现并行，只能通过多进程。">
 <meta property="og:locale">
-<meta property="og:image" content="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-83212cm">
-<meta property="og:image" content="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-gwnd122h">
-<meta property="og:image" content="https://hackernoon.com/drafts/9y1zw12i8.png">
+<meta property="og:image" content="https://i.imgur.com/5sPR06W.gif">
+<meta property="og:image" content="https://i.imgur.com/HHFaT4R.gif">
+<meta property="og:image" content="https://i.imgur.com/fdJo9ep.jpg">
 <meta property="article:published_time" content="2019-12-12T21:42:01.000Z">
-<meta property="article:modified_time" content="2019-12-12T19:42:01.000Z">
+<meta property="article:modified_time" content="2021-08-23T23:58:17.040Z">
 <meta property="article:author" content="Xiaoliang Wu">
 <meta property="article:tag" content="中文">
 <meta property="article:tag" content="Python">
@@ -25,7 +25,7 @@
 <meta property="article:tag" content="Parallel">
 <meta property="article:tag" content="Cython">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-83212cm">
+<meta name="twitter:image" content="https://i.imgur.com/5sPR06W.gif">
   
     <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
   
@@ -108,8 +108,8 @@
 <p>先写结论：<strong>GIL 的存在让 Python 的多线程应用只能实现<u>并发</u>，而不能实现<u>并行</u>。如果想实现并行，只能通过多进程。</strong></p>
 <a id="more"></a> 
 <p>关于并发，并行以及 GIL 的细节可以看这篇<a target="_blank" rel="noopener" href="https://hackernoon.com/concurrent-programming-in-python-is-not-what-you-think-it-is-b6439c3f3e6a">博客（英文）</a> [1]。这里简单描述一下并发 (Concurrency) 与并行 (Parallelism) 之间的区别。从下图中可以看到在并发中，处理能力并没有得到提升。而并行是真正运用多个处理器同时处理，提升了总体的处理能力。</p>
-<p><img src="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-83212cm" alt="并发示意图；服务员可以类比为CPU；顾客可以类比为需要处理的工作"></p>
-<p><img src="https://hackernoon.com/photos/ZbqyG0GzLmVkwsYNyBRB9kTk5DR2-gwnd122h" alt="并行示意图"></p>
+<p><img src="https://i.imgur.com/5sPR06W.gif" alt="并发示意图；服务员可以类比为CPU；顾客可以类比为需要处理的工作"></p>
+<p><img src="https://i.imgur.com/HHFaT4R.gif" alt="并行示意图"></p>
 <p>在这里，我所希望的是一个可以并行的程序，而不是一个并发程序。我首先想到的就是多线程编程。通过调用 Python 里的 threading 库，利用多线程达到并行。</p>
 <p>因此，我们首先实现一个单线程的程序 (test1) 作为benchmark。代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">demo1</span>(<span class="params">N</span>):</span></span><br><span class="line">    flag = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">        flag = <span class="keyword">not</span> flag</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;end&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span>(<span class="params">N</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Single thread&quot;</span>)</span><br><span class="line">    demo1(N)</span><br><span class="line">    demo1(N)</span><br><span class="line"></span><br><span class="line">test1(<span class="built_in">int</span>(<span class="number">1e9</span>))</span><br></pre></td></tr></table></figure>
@@ -118,7 +118,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span>(<span class="params">N</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Two thread with Python threading library&quot;</span>)</span><br><span class="line">    thread1 = Thread(target=demo1, args=(N,))</span><br><span class="line">    thread2 = Thread(target=demo1, args=(N,))</span><br><span class="line">    thread1.start()</span><br><span class="line">    thread2.start()</span><br><span class="line">    thread1.join()</span><br><span class="line">    thread2.join()</span><br></pre></td></tr></table></figure>
 <p>结果，运行时间为<strong>79</strong>秒！虽然速度是快了，但是明显不及我们预期的一倍。</p>
 <p>而性能不及预期的原因就是在一开始提到的全局解释器锁 (GIL)。由于历史原因，Python 并没有锁操作，所以为了防止多个线程之间的读写冲突，Python 使用 GIL 作为全局锁。换句话说，Python 的解释器每次只会执行一个线程。下图展示了 Python 多线程程序真正的运行方式。</p>
-<p><img src="https://hackernoon.com/drafts/9y1zw12i8.png" alt="Python 多线程运行"></p>
+<p><img src="https://i.imgur.com/fdJo9ep.jpg" alt="Python 多线程运行"></p>
 <p>可以看出来，每个线程要运行前先请求 GIL，当线程阻塞时（比如 I/O 阻塞），线程释放 GIL，这时，另一个线程会接着运行。因此，Python 的多线程程序在同一时间只有一个线程在运行。多线程 Python 程序只是并发，而不是并行。</p>
 <p>这就解释了为什么<code>test2</code> 的速度并不是 <code>test1</code> 的2倍。</p>
 <hr>
