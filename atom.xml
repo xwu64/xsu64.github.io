@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2021-08-21T23:09:50.273Z</updated>
+  <updated>2021-08-24T03:54:17.367Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Read Notes of Intermediate Python</title>
+    <link href="http://xwu64.github.io/2021/08/23/Read-Notes-of-Intermediate-Python/"/>
+    <id>http://xwu64.github.io/2021/08/23/Read-Notes-of-Intermediate-Python/</id>
+    <published>2021-08-24T03:54:17.000Z</published>
+    <updated>2021-08-24T03:54:17.367Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/NgaNqtI.jpg&quot; alt=&quot;teaser&quot;&gt;&lt;/p&gt;
+&lt;p&gt;刚刚读完 &lt;a href=&quot;https://book.pythontips.com/en/latest/&quot;&gt;《Intermediate Python》&lt;/a&gt;（&lt;a href=&quot;https://py.eastlakeside.cn/&quot;&gt;中译《Python 进阶》&lt;/a&gt;）。部分知识在看书前已经知道，在这里将新了解到的内容总结一下。方便未来的查阅。其中涉及到的内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Filter &lt;/li&gt;
+&lt;li&gt;Reduce&lt;/li&gt;
+&lt;li&gt;Coroutine&lt;/li&gt;
+&lt;li&gt;__slots__&lt;/li&gt;
+&lt;li&gt;namedtuple&lt;/li&gt;
+&lt;li&gt;One-liners&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Python" scheme="http://xwu64.github.io/tags/Python/"/>
+    
+      <category term="读书笔记" scheme="http://xwu64.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>读书笔记 - 《专注力》</title>
