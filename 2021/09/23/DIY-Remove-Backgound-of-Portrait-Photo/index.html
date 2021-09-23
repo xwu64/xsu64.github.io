@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[DIY] Remove Backgound of Portrait Photo | Xiaoliang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This blog introduces tools used to remove background of portrait photos. Required tools are listed below:  Rembg: remove background by using u2net model MacOS Preview: polish photos from Rembg and cro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[DIY] Remove Backgound of Portrait Photo">
+<meta property="og:url" content="http://xwu64.github.io/2021/09/23/DIY-Remove-Backgound-of-Portrait-Photo/index.html">
+<meta property="og:site_name" content="Xiaoliang&#39;s Blog">
+<meta property="og:description" content="This blog introduces tools used to remove background of portrait photos. Required tools are listed below:  Rembg: remove background by using u2net model MacOS Preview: polish photos from Rembg and cro">
+<meta property="og:locale">
+<meta property="og:image" content="https://i.imgur.com/iXwS6mg.png">
+<meta property="article:published_time" content="2021-09-23T22:03:30.000Z">
+<meta property="article:modified_time" content="2021-09-23T22:22:26.947Z">
+<meta property="article:author" content="Xiaoliang Wu">
+<meta property="article:tag" content="English">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="DIY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/iXwS6mg.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Xiaoliang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xwu64.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Xiaoliang&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-DIY-Remove-Backgound-of-Portrait-Photo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/23/DIY-Remove-Backgound-of-Portrait-Photo/" class="article-date">
+  <time datetime="2021-09-23T22:03:30.000Z" itemprop="datePublished">2021-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [DIY] Remove Backgound of Portrait Photo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>This blog introduces tools used to remove background of portrait photos. Required tools are listed below:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/danielgatis/rembg">Rembg</a>: remove background by using u2net model</li>
+<li>MacOS Preview: polish photos from Rembg and crop photos </li>
+<li>A simple Python script: change the background from transparent to any color (e.g, white). </li>
+</ul>
+<a id="more"></a> 
+<h2 id="Rembg"><a href="#Rembg" class="headerlink" title="Rembg"></a>Rembg</h2><p>You could follow instructions on <a target="_blank" rel="noopener" href="https://github.com/danielgatis/rembg">Github</a> to install Rembg. Note that I <strong>fail</strong> to install Rembg on my MacBook Pro with M1 chip. I suggest to install Rembg on a Linux machine. </p>
+<p>Once you complete the installation, you could easily remove background by Rembg. To avoid redundant jump between websites, I copy the example commands of Rembg to here.</p>
+<h3 id="Usage-as-a-cli"><a href="#Usage-as-a-cli" class="headerlink" title="Usage as a cli"></a>Usage as a cli</h3><p>Remove the background from a remote image</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s http:&#x2F;&#x2F;input.png | rembg &gt; output.png</span><br></pre></td></tr></table></figure>
+<p>Remove the background from a local file</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rembg -o path&#x2F;to&#x2F;output.png path&#x2F;to&#x2F;input.png</span><br></pre></td></tr></table></figure>
+<p>Remove the background from all images in a folder</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rembg -p path&#x2F;to&#x2F;input path&#x2F;to&#x2F;output</span><br></pre></td></tr></table></figure>
+<h2 id="MacOS-Preview"><a href="#MacOS-Preview" class="headerlink" title="MacOS Preview"></a>MacOS Preview</h2><p>You could use “Instant Alpha” button to polish your photo.</p>
+<p><img src="https://i.imgur.com/iXwS6mg.png" alt=""></p>
+<h2 id="Python-Script-for-Setting-Background-Color"><a href="#Python-Script-for-Setting-Background-Color" class="headerlink" title="Python Script for Setting Background Color"></a>Python Script for Setting Background Color</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">INPUT_FILE = <span class="string">&#x27;test.png&#x27;</span></span><br><span class="line">OUTPUT_FILE = <span class="string">&quot;img2.png&quot;</span></span><br><span class="line">BG_COLOR = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>) <span class="comment"># (R, G, B, A)</span></span><br><span class="line"></span><br><span class="line">img = Image.<span class="built_in">open</span>(INPUT_FILE)</span><br><span class="line">img = img.convert(<span class="string">&quot;RGBA&quot;</span>)</span><br><span class="line">datas = img.getdata()</span><br><span class="line"></span><br><span class="line">newData = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> datas:</span><br><span class="line">	<span class="keyword">if</span> item == (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>):</span><br><span class="line">		newData.append(BG_COLOR)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		newData.append(item)</span><br><span class="line"></span><br><span class="line">img.putdata(newData)</span><br><span class="line">img.save(OUTPUT_FILE, <span class="string">&quot;PNG&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xwu64.github.io/2021/09/23/DIY-Remove-Backgound-of-Portrait-Photo/" data-id="cktxi49j90001kptg96xz6bq9" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/English/" rel="tag">English</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ 
+<script src="/jquery/jquery.min.js"></script>
+
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/23/Read-Notes-of-Intermediate-Python/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">读书笔记 - 《Intermediate Python》</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">Content</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Rembg"><span class="toc-number">1.</span> <span class="toc-text">Rembg</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage-as-a-cli"><span class="toc-number">1.1.</span> <span class="toc-text">Usage as a cli</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-Preview"><span class="toc-number">2.</span> <span class="toc-text">MacOS Preview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Script-for-Setting-Background-Color"><span class="toc-number">3.</span> <span class="toc-text">Python Script for Setting Background Color</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2021 Xiaoliang Wu&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      Contact&nbsp;|&nbsp;zurielibra@gmail.com
+    </div>
+  </div>
+</footer>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ 
+<script src="/js/is.js"></script>
+
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/elevator.js"></script>
+
+  </div>
+</body>
+</html>
