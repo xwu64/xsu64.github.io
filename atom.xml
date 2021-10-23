@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2021-09-23T22:22:26.947Z</updated>
+  <updated>2021-10-23T21:28:42.970Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pixar&#39;s Story Formula</title>
+    <link href="http://xwu64.github.io/2021/10/23/Pixar-s-Story-Formula/"/>
+    <id>http://xwu64.github.io/2021/10/23/Pixar-s-Story-Formula/</id>
+    <published>2021-10-23T21:23:05.000Z</published>
+    <updated>2021-10-23T21:28:42.970Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在看阮一峰的&lt;a href=&quot;http://www.ruanyifeng.com/blog/2021/10/weekly-issue-180.html&quot;&gt;《科技爱好者周刊》第180期&lt;/a&gt;时，看到其中推荐了&lt;a href=&quot;https://startuppitch.substack.com/p/nail-your-startup-pitch-use-pixars&quot;&gt;皮克斯创作故事的公式&lt;/a&gt;，感觉以后可以以此作为写作提纲，特此记录下来。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/w1a9oFl.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="http://xwu64.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Writing" scheme="http://xwu64.github.io/tags/Writing/"/>
+    
+  </entry>
   
   <entry>
     <title>[DIY] Remove Backgound of Portrait Photo</title>
@@ -510,37 +531,6 @@
       <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
     
       <category term="Golang" scheme="http://xwu64.github.io/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tutorial for Hexo+Github=Blog</title>
-    <link href="http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/"/>
-    <id>http://xwu64.github.io/2019/02/19/Tutorial-for-Hexo-Github-Blog/</id>
-    <published>2019-02-20T06:08:10.000Z</published>
-    <updated>2019-03-29T20:37:25.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;Create repository&lt;blockquote&gt;
-&lt;p&gt;Follow instructions in &lt;a href=&quot;https://pages.github.com/&quot;&gt;github&lt;/a&gt; to create a new repository&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="English" scheme="http://xwu64.github.io/tags/English/"/>
-    
-      <category term="Tutorial" scheme="http://xwu64.github.io/tags/Tutorial/"/>
-    
-      <category term="Hexo" scheme="http://xwu64.github.io/tags/Hexo/"/>
-    
-      <category term="Github" scheme="http://xwu64.github.io/tags/Github/"/>
-    
-      <category term="Blog" scheme="http://xwu64.github.io/tags/Blog/"/>
     
   </entry>
   
