@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xwu64.github.io/"/>
-  <updated>2022-01-31T00:39:05.328Z</updated>
+  <updated>2022-02-11T06:18:17.601Z</updated>
   <id>http://xwu64.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>理解 Python 中的 __all__</title>
+    <link href="http://xwu64.github.io/2022/02/10/Understand-Python-all/"/>
+    <id>http://xwu64.github.io/2022/02/10/Understand-Python-all/</id>
+    <published>2022-02-11T06:18:17.000Z</published>
+    <updated>2022-02-11T06:18:17.601Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 GitHub 上寻找开源项目的时候偶然看到 &lt;a href=&quot;https://github.com/RhetTbull/osxphotos/issues/266&quot;&gt;osxphotos&lt;/a&gt; 里面有个 issue 是在 Python 文件中显式的定义 &lt;code&gt;__all__&lt;/code&gt;。里面还附了份&lt;a href=&quot;http://xion.io/post/code/python-all-wild-imports.html&quot;&gt;链接&lt;/a&gt;解释为什么需要 &lt;code&gt;__all__&lt;/code&gt;。在这里东施效颦的用中文解释一下。&lt;/p&gt;
+&lt;h1 id=&quot;TL-DR&quot;&gt;&lt;a href=&quot;#TL-DR&quot; class=&quot;headerlink&quot; title=&quot;TL;DR&quot;&gt;&lt;/a&gt;TL;DR&lt;/h1&gt;&lt;p&gt;&lt;code&gt;__all__&lt;/code&gt; 定义的字符串列表规定了 &lt;code&gt;from module import *&lt;/code&gt; 会导入该文件中的哪些类，函数，变量。不在 &lt;code&gt;__all__&lt;/code&gt; 中的类，函数，变量不会被导入。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="Python" scheme="http://xwu64.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>不仅要带着问题找答案，还要带着答案找问题</title>
@@ -511,28 +532,6 @@
     
     
       <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
-    
-      <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>近AI时代</title>
-    <link href="http://xwu64.github.io/2019/03/15/%E8%BF%91AI%E6%97%B6%E4%BB%A3/"/>
-    <id>http://xwu64.github.io/2019/03/15/近AI时代/</id>
-    <published>2019-03-16T03:34:19.000Z</published>
-    <updated>2019-04-18T01:03:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近几年，AI领域的发展如火火如荼，从图像到语音识别，再到无人⻋， 无人售货 店, 可见其应用范围十分广泛。毕竟AI的目的就是变得和人一样, 最终取代人，那么只要是现在属于人的岗位，通过AI讲故事都是可以讲得通的。资本且很愿意投资相关的项目。不过目前, 受制于硬件的发展，大多数AI项目更多停留在虚拟空间。经过对大量数据加工后，机器作出决定, 最后由人来进行最后的实施。这个AI还无法直接与真实世界交互的时代可以被称为 “近AI时代”。当机器人技术更加成熟后，AI直接通过机器人影响现实世界时, 这才是 ”AI时代“。 &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="中文" scheme="http://xwu64.github.io/tags/%E4%B8%AD%E6%96%87/"/>
-    
-      <category term="AI" scheme="http://xwu64.github.io/tags/AI/"/>
     
       <category term="随想" scheme="http://xwu64.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
     
